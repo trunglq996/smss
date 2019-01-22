@@ -11,6 +11,7 @@ namespace smss.Connection
         public Connection()
         {
 
+
         }
     }
 }
