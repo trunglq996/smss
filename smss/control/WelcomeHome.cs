@@ -1,27 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using smss.classKN;
 
-namespace smss
+namespace smss.control
 {
-    public partial class DangNhap : Form
+    public partial class WelcomeHome : UserControl
     {
-        public DangNhap()
+        public WelcomeHome()
         {
             InitializeComponent();
         }
 
-
-        private void Form1_Load(object sender, EventArgs e)
+        private void WelcomeHome_Load(object sender, EventArgs e)
         {
-
+            Width = 400;
+            Height = 240;
         }
 
         private void btnDN_Click(object sender, EventArgs e)

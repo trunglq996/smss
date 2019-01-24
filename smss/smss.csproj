@@ -47,16 +47,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="classKN\Connection.cs" />
-    <Compile Include="DangNhap.cs">
+    <Compile Include="control\WelcomeHome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="control\WelcomeHome.Designer.cs">
+      <DependentUpon>WelcomeHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DangNhap.Designer.cs">
-      <DependentUpon>DangNhap.cs</DependentUpon>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="DangNhap.resx">
-      <DependentUpon>DangNhap.cs</DependentUpon>
+    <EmbeddedResource Include="control\WelcomeHome.resx">
+      <DependentUpon>WelcomeHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -79,6 +88,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="img\1.jpg" />
+    <Content Include="img\10.jpg" />
+    <Content Include="img\11.jpg" />
+    <Content Include="img\12.jpg" />
+    <Content Include="img\13.jpg" />
+    <Content Include="img\14.jpg" />
+    <Content Include="img\15.jpg" />
+    <Content Include="img\2.jpeg" />
+    <Content Include="img\3.PNG" />
+    <Content Include="img\4.jpg" />
+    <Content Include="img\5.jpg" />
+    <Content Include="img\6.jpg" />
+    <Content Include="img\7.jpg" />
+    <Content Include="img\8.jpg" />
+    <Content Include="img\9.jpg" />
+    <Content Include="img\equipmentimg.gif" />
+    <Content Include="img\home.png" />
+    <Content Include="img\home2.png" />
+    <Content Include="img\mta.jpg" />
+    <Content Include="img\settings.png" />
+    <Content Include="img\tweet.jpg" />
+    <Content Include="img\upload.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

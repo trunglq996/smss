@@ -7,3 +7,13 @@ C:\Users\quang\OneDrive\document\Visual Studio 2015\Projects\smss\smss\obj\Debug
 C:\Users\quang\OneDrive\document\Visual Studio 2015\Projects\smss\smss\obj\Debug\smss.exe
 C:\Users\quang\OneDrive\document\Visual Studio 2015\Projects\smss\smss\obj\Debug\smss.pdb
 C:\Users\quang\OneDrive\document\Visual Studio 2015\Projects\smss\smss\obj\Debug\smss.DangNhap.resources
+C:\Users\quang\OneDrive\document\GitHub\smss\smss\bin\Debug\smss.exe.config
+C:\Users\quang\OneDrive\document\GitHub\smss\smss\obj\Debug\smss.exe
+C:\Users\quang\OneDrive\document\GitHub\smss\smss\obj\Debug\smss.pdb
+C:\Users\quang\OneDrive\document\GitHub\smss\smss\bin\Debug\smss.exe
+C:\Users\quang\OneDrive\document\GitHub\smss\smss\bin\Debug\smss.pdb
+C:\Users\quang\OneDrive\document\GitHub\smss\smss\obj\Debug\smss.csprojResolveAssemblyReference.cache
+C:\Users\quang\OneDrive\document\GitHub\smss\smss\obj\Debug\smss.control.WelcomeHome.resources
+C:\Users\quang\OneDrive\document\GitHub\smss\smss\obj\Debug\smss.Home.resources
+C:\Users\quang\OneDrive\document\GitHub\smss\smss\obj\Debug\smss.Properties.Resources.resources
+C:\Users\quang\OneDrive\document\GitHub\smss\smss\obj\Debug\smss.csproj.GenerateResource.Cache
