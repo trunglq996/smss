@@ -7,6 +7,7 @@ C:\Users\quang\OneDrive\document\Visual Studio 2015\Projects\smss\smss\obj\Debug
 C:\Users\quang\OneDrive\document\Visual Studio 2015\Projects\smss\smss\obj\Debug\smss.exe
 C:\Users\quang\OneDrive\document\Visual Studio 2015\Projects\smss\smss\obj\Debug\smss.pdb
 C:\Users\quang\OneDrive\document\Visual Studio 2015\Projects\smss\smss\obj\Debug\smss.DangNhap.resources
+<<<<<<< HEAD
 C:\Users\quang\OneDrive\document\GitHub\smss\smss\bin\Debug\smss.exe.config
 C:\Users\quang\OneDrive\document\GitHub\smss\smss\obj\Debug\smss.exe
 C:\Users\quang\OneDrive\document\GitHub\smss\smss\obj\Debug\smss.pdb
@@ -17,3 +18,8 @@ C:\Users\quang\OneDrive\document\GitHub\smss\smss\obj\Debug\smss.control.Welcome
 C:\Users\quang\OneDrive\document\GitHub\smss\smss\obj\Debug\smss.Home.resources
 C:\Users\quang\OneDrive\document\GitHub\smss\smss\obj\Debug\smss.Properties.Resources.resources
 C:\Users\quang\OneDrive\document\GitHub\smss\smss\obj\Debug\smss.csproj.GenerateResource.Cache
+=======
+C:\Users\quang\OneDrive\Tài liệu\GitHub\smss\smss\bin\Debug\smss.exe.config
+C:\Users\quang\OneDrive\Tài liệu\GitHub\smss\smss\obj\Debug\smss.exe
+C:\Users\quang\OneDrive\Tài liệu\GitHub\smss\smss\obj\Debug\smss.pdb
+>>>>>>> 8ec8c561da7f7ca755f518ad56dcf385af31029a
