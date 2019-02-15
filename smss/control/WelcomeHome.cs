@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using smss.Connection;
 
 namespace smss.control
 {
@@ -25,7 +26,8 @@ namespace smss.control
 
         private void btnDN_Click(object sender, EventArgs e)
         {
-
+            DataSet ds = new DataSet();
+    
         }
     }
 }
