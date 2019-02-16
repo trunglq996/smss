@@ -30,3 +30,13 @@ C:\Users\quang\OneDrive\Tài liệu\GitHub\smss\smss\obj\Debug\smss.Properties
 C:\Users\quang\OneDrive\Tài liệu\GitHub\smss\smss\obj\Debug\smss.csproj.GenerateResource.Cache
 C:\Users\quang\OneDrive\Tài liệu\GitHub\smss\smss\bin\Debug\smss.exe
 C:\Users\quang\OneDrive\Tài liệu\GitHub\smss\smss\bin\Debug\smss.pdb
+C:\Users\quang\Documents\GitHub\smss\smss\bin\Debug\smss.exe.config
+C:\Users\quang\Documents\GitHub\smss\smss\obj\Debug\smss.exe
+C:\Users\quang\Documents\GitHub\smss\smss\obj\Debug\smss.pdb
+C:\Users\quang\Documents\GitHub\smss\smss\bin\Debug\smss.exe
+C:\Users\quang\Documents\GitHub\smss\smss\bin\Debug\smss.pdb
+C:\Users\quang\Documents\GitHub\smss\smss\obj\Debug\smss.csprojResolveAssemblyReference.cache
+C:\Users\quang\Documents\GitHub\smss\smss\obj\Debug\smss.control.WelcomeHome.resources
+C:\Users\quang\Documents\GitHub\smss\smss\obj\Debug\smss.Home.resources
+C:\Users\quang\Documents\GitHub\smss\smss\obj\Debug\smss.Properties.Resources.resources
+C:\Users\quang\Documents\GitHub\smss\smss\obj\Debug\smss.csproj.GenerateResource.Cache
