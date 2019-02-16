@@ -15,7 +15,9 @@ namespace smss
         
         readonly control.WelcomeHome _wc = new control.WelcomeHome();
         readonly control.Menu _menu = new control.Menu();
-        readonly control.ViewData _data = new control.ViewData();
+        readonly control.Grade _grade = new control.Grade();
+        readonly control.Class _class = new control.Class();
+        readonly control.Student _student = new control.Student();
 
         public Home()
         {
@@ -27,13 +29,13 @@ namespace smss
             // Đã đăng nhập thành công
             Remove();
             Controls.Add(_menu);
-            Controls.Add(_data);
+            Controls.Add(_grade); // đăng nhập xong chuyển vào trang khóa học
             _menu.staffcode = staffcode;
             _menu.Hello(name);
             _menu.Location = new Point(0, 0);
-            _data.Location = new Point(0, 67);
+            _grade.Location = new Point(0, 67);
             _menu.Show();
-            _data.Show();
+            _grade.Show();
         }
         private void Home_Load(object sender, EventArgs e)
         {
@@ -49,6 +51,9 @@ namespace smss
         {
             Controls.Remove(_wc);
             Controls.Remove(_menu);
+            Controls.Remove(_grade);
+            Controls.Remove(_class);
+            Controls.Remove(_student);
         }
     }
 }

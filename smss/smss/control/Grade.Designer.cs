@@ -1,6 +1,6 @@
 ﻿namespace smss.control
 {
-    partial class ViewData
+    partial class Grade
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,37 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGrade = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrade)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGrade
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(916, 394);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGrade.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrade.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGrade.Location = new System.Drawing.Point(0, 0);
+            this.dataGrade.Margin = new System.Windows.Forms.Padding(0);
+            this.dataGrade.Name = "dataGrade";
+            this.dataGrade.RowTemplate.Height = 28;
+            this.dataGrade.Size = new System.Drawing.Size(916, 394);
+            this.dataGrade.TabIndex = 0;
             // 
-            // ViewData
+            // Grade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGrade);
             this.Margin = new System.Windows.Forms.Padding(0);
-            this.Name = "ViewData";
+            this.Name = "Grade";
             this.Size = new System.Drawing.Size(916, 394);
             this.Load += new System.EventHandler(this.ViewData_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrade)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGrade;
     }
 }

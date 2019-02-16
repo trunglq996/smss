@@ -47,17 +47,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connection\Connection.cs" />
+    <Compile Include="control\Class.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="control\Class.Designer.cs">
+      <DependentUpon>Class.cs</DependentUpon>
+    </Compile>
     <Compile Include="control\Menu.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="control\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="control\ViewData.cs">
+    <Compile Include="control\Grade.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="control\ViewData.Designer.cs">
-      <DependentUpon>ViewData.cs</DependentUpon>
+    <Compile Include="control\Grade.Designer.cs">
+      <DependentUpon>Grade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="control\Student.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="control\Student.Designer.cs">
+      <DependentUpon>Student.cs</DependentUpon>
     </Compile>
     <Compile Include="control\WelcomeHome.cs">
       <SubType>UserControl</SubType>
@@ -73,11 +85,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="control\Class.resx">
+      <DependentUpon>Class.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="control\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="control\ViewData.resx">
-      <DependentUpon>ViewData.cs</DependentUpon>
+    <EmbeddedResource Include="control\Grade.resx">
+      <DependentUpon>Grade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="control\Student.resx">
+      <DependentUpon>Student.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="control\WelcomeHome.resx">
       <DependentUpon>WelcomeHome.cs</DependentUpon>
