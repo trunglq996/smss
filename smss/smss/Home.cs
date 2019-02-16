@@ -62,6 +62,7 @@ namespace smss
         }
         private void Home_Load(object sender, EventArgs e)
         {
+            // bắt các sự kiện từ các userControl con
             _wc.LoginEvent += loginControl_LoginEvent;// click đăng nhập
             _menu.Change += ChangeTab; // click chuyển tab
             Width = 900;
