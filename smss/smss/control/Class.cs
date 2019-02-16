@@ -20,7 +20,7 @@ namespace smss.control
         private void Class_Load(object sender, EventArgs e)
         {
             Width = 900;
-            Height = 400;
+            Height = 390;
             DataSet ds = new DataSet();
             string sql = "select * from class";
             int ret = new Connection.Connection().GetDataByQuery(ref ds, "class", sql);
