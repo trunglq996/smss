@@ -1,24 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.Design;
-using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace smss.Connection
 {
-    class Connection
+    class Db
     {
         private readonly string _conStr;
         public readonly int Status;
         SqlConnection _connection;
 
-        public Connection()
+        public Db()
         {
             _conStr =
-                "Data Source=Trung;Initial Catalog=otest;integrated security=true; Max Pool Size=1024; ";
+                @"Data Source=DESKTOP-NGO2712\SQLEXPRESS;Initial Catalog=otest;integrated security=true; Max Pool Size=1024; ";
             try
             {
                 _connection = new SqlConnection(_conStr);

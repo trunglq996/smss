@@ -27,7 +27,11 @@ namespace smss.control
         private void btnDN_Click(object sender, EventArgs e)
         {
             DataSet ds = new DataSet();
-    
+            int ret = new Db().GetDataByQuery(ref ds, "staff", "select * from staff");
+            if(ret >= 0)
+            {
+
+            }
         }
     }
 }

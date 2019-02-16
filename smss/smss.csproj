@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connection\Connection.cs" />
+    <Compile Include="Connection\Db.cs" />
     <Compile Include="control\WelcomeHome.cs">
       <SubType>UserControl</SubType>
     </Compile>

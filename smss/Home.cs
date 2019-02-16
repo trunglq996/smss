@@ -18,7 +18,6 @@ namespace smss
             InitializeComponent();
         }
 
-
         private void Form1_Load(object sender, EventArgs e)
         {
             Width = 1000;
