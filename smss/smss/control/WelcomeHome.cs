@@ -13,7 +13,7 @@ namespace smss.control
 {
     public partial class WelcomeHome : UserControl
     {
-        public delegate void Login(string staffcode,string name);
+        public delegate void Login(string staffcode, string name);
         public event Login LoginEvent;
         public WelcomeHome()
         {

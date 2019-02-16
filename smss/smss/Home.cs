@@ -23,7 +23,30 @@ namespace smss
         {
             InitializeComponent();
         }
-
+        private void ChangeTab(int tabID)
+        {
+            Controls.Remove(_grade);
+            Controls.Remove(_class);
+            Controls.Remove(_student);
+            if (tabID == 1)
+            {
+                Controls.Add(_grade);
+                _grade.Location = new Point(0, 67);
+                _grade.Show();
+            }
+            else if(tabID == 2)
+            {
+                Controls.Add(_class);
+                _class.Location = new Point(0, 67);
+                _class.Show();
+            }
+            else if(tabID == 3)
+            {
+                Controls.Add(_student);
+                _student.Location = new Point(0, 67);
+                _student.Show();
+            }
+        }
         private void loginControl_LoginEvent(string staffcode, string name)
         {
             // Đã đăng nhập thành công
@@ -39,8 +62,8 @@ namespace smss
         }
         private void Home_Load(object sender, EventArgs e)
         {
-            _wc.LoginEvent += loginControl_LoginEvent;
-            // nếu đăng nhập đúng thì quay trở lại form chính để chuyển usercontrol khác
+            _wc.LoginEvent += loginControl_LoginEvent;// click đăng nhập
+            _menu.Change += ChangeTab; // click chuyển tab
             Width = 900;
             Height = 500;
             Controls.Add(_wc);

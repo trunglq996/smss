@@ -16,6 +16,8 @@ namespace smss.control
         {
             InitializeComponent();
         }
+        public delegate void ChangeTab(int tabID);
+        public event ChangeTab Change;
         public string staffcode;
         public void Hello(string name)
         {
@@ -25,6 +27,21 @@ namespace smss.control
         {
             Width = 900;
             Height = 65;
+        }
+
+        private void btnGrade_Click(object sender, EventArgs e)
+        {
+            Change(1);// gọi đến sự kiện ChangeTab ở Home.cs
+        }
+
+        private void btnClass_Click(object sender, EventArgs e)
+        {
+            Change(2); //gọi đến sự kiện ChangeTab ở Home.cs
+        }
+
+        private void btnStudent_Click(object sender, EventArgs e)
+        {
+            Change(3); //gọi đến sự kiện ChangeTab ở Home.cs
         }
     }
 }

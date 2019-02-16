@@ -53,6 +53,7 @@
             this.btnGrade.TabIndex = 1;
             this.btnGrade.Text = "Khóa học";
             this.btnGrade.UseVisualStyleBackColor = false;
+            this.btnGrade.Click += new System.EventHandler(this.btnGrade_Click);
             // 
             // btnClass
             // 
@@ -63,6 +64,7 @@
             this.btnClass.TabIndex = 2;
             this.btnClass.Text = "Lớp học";
             this.btnClass.UseVisualStyleBackColor = false;
+            this.btnClass.Click += new System.EventHandler(this.btnClass_Click);
             // 
             // btnStudent
             // 
@@ -73,6 +75,7 @@
             this.btnStudent.TabIndex = 3;
             this.btnStudent.Text = "DS sinh viên";
             this.btnStudent.UseVisualStyleBackColor = false;
+            this.btnStudent.Click += new System.EventHandler(this.btnStudent_Click);
             // 
             // Menu
             // 
