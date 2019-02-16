@@ -20,10 +20,10 @@ namespace smss
 
         private void Home_Load(object sender, EventArgs e)
         {
-            Width = 1000;
-            Height = 600;
+            Width = 900;
+            Height = 500;
             Controls.Add(_wc);
-            _wc.Location = new Point(400, 200);
+            _wc.Location = new Point(250, 130);
             _wc.Show();
         }
 

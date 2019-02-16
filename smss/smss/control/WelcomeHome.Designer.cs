@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTK = new System.Windows.Forms.TextBox();
             this.txtMK = new System.Windows.Forms.TextBox();
             this.btnDN = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.error = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -89,6 +92,10 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Mật khẩu: ";
             // 
+            // error
+            // 
+            this.error.ContainerControl = this;
+            // 
             // WelcomeHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -104,6 +111,7 @@
             this.Name = "WelcomeHome";
             this.Size = new System.Drawing.Size(602, 336);
             this.Load += new System.EventHandler(this.WelcomeHome_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,5 +125,6 @@
         private System.Windows.Forms.Button btnDN;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ErrorProvider error;
     }
 }
