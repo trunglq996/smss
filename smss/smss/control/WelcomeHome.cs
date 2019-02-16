@@ -13,7 +13,8 @@ namespace smss.control
 {
     public partial class WelcomeHome : UserControl
     {
-
+        public delegate void Login(string staffcode,string name);
+        public event Login LoginEvent;
         public WelcomeHome()
         {
             InitializeComponent();
@@ -50,7 +51,7 @@ namespace smss.control
                 if(ds.Tables["staff"].Rows.Count > 0)
                 {
                     // đăng nhập thành công
-                    this.Hide();
+                    LoginEvent(ds.Tables["staff"].Rows[0]["code"].ToString(), ds.Tables["staff"].Rows[0]["name"].ToString());
                 }
                 else
                 {
@@ -60,8 +61,9 @@ namespace smss.control
             }
             else
             {
+                LoginEvent("1","trung");
                 // có lỗi truy cập dữ liệu
-                MessageBox.Show("Lỗi đăng nhập!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                //MessageBox.Show("Lỗi đăng nhập!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
     }

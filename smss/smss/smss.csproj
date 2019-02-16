@@ -47,11 +47,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connection\Connection.cs" />
-    <Compile Include="control\menu.cs">
+    <Compile Include="control\Menu.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="control\menu.Designer.cs">
-      <DependentUpon>menu.cs</DependentUpon>
+    <Compile Include="control\Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="control\ViewData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="control\ViewData.Designer.cs">
+      <DependentUpon>ViewData.cs</DependentUpon>
     </Compile>
     <Compile Include="control\WelcomeHome.cs">
       <SubType>UserControl</SubType>
@@ -67,8 +73,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="control\menu.resx">
-      <DependentUpon>menu.cs</DependentUpon>
+    <EmbeddedResource Include="control\Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="control\ViewData.resx">
+      <DependentUpon>ViewData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="control\WelcomeHome.resx">
       <DependentUpon>WelcomeHome.cs</DependentUpon>
