@@ -13,11 +13,11 @@ namespace smss
     public partial class Home : Form
     {
         readonly control.WelcomeHome _wc = new control.WelcomeHome();
+
         public Home()
         {
             InitializeComponent();
         }
-
         private void Home_Load(object sender, EventArgs e)
         {
             Width = 900;
@@ -25,11 +25,6 @@ namespace smss
             Controls.Add(_wc);
             _wc.Location = new Point(250, 130);
             _wc.Show();
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

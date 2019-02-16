@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connection\Connection.cs" />
+    <Compile Include="control\menu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="control\menu.Designer.cs">
+      <DependentUpon>menu.cs</DependentUpon>
+    </Compile>
     <Compile Include="control\WelcomeHome.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -61,6 +67,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="control\menu.resx">
+      <DependentUpon>menu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="control\WelcomeHome.resx">
       <DependentUpon>WelcomeHome.cs</DependentUpon>
     </EmbeddedResource>

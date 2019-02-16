@@ -13,6 +13,7 @@ namespace smss.control
 {
     public partial class WelcomeHome : UserControl
     {
+
         public WelcomeHome()
         {
             InitializeComponent();
@@ -49,6 +50,7 @@ namespace smss.control
                 if(ds.Tables["staff"].Rows.Count > 0)
                 {
                     // đăng nhập thành công
+                    this.Hide();
                 }
                 else
                 {
