@@ -9,7 +9,6 @@ namespace smss.model
     class studentObj
     {
         public string code { get; set; }
-        public string codeview { get; set; }
         public string name { get; set; }
         public string userpass { get; set; }
         public string photo { get; set; }

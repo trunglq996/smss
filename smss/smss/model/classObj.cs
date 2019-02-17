@@ -9,7 +9,6 @@ namespace smss.model
     class classObj
     {
         public string code { get; set; }
-        public string codeview { get; set; }
         public string name { get; set; }
         public string staffcode { get; set; }
         public string gradecode { get; set; }

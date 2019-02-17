@@ -9,7 +9,6 @@ namespace smss.model
     class gradeObj
     {
         public string code { get; set; }
-        public string codeview { get; set; }
         public string name { get; set; }
         public int yearin { get; set; }
         public int yearout { get; set; }

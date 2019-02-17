@@ -44,14 +44,14 @@ namespace smss.Connection
             _connection.Close();
             return ret;
         }
-        public int Login(ref staffObj obj,string codeview, string userpass)
+        public int Login(ref staffObj obj,string code, string userpass)
         {
             int ret = Status;
             if (ret >= 0)
             {
-                string sql = "select * from staff where codeview = @codeview and userpass = @userpass";
+                string sql = "select * from staff where code = @code and userpass = @userpass";
                 SqlCommand cmd = new SqlCommand(sql, _connection) { CommandType = CommandType.Text };
-                cmd.Parameters.AddWithValue("codeview", codeview);
+                cmd.Parameters.AddWithValue("code", code);
                 cmd.Parameters.AddWithValue("userpass", userpass);
                 SqlDataReader read = cmd.ExecuteReader();
                 try
@@ -59,7 +59,6 @@ namespace smss.Connection
                     while (read.Read())
                     {
                         obj.code = read["code"].ToString();
-                        obj.codeview = read["codeview"].ToString();
                         obj.name = read["name"].ToString();
                         if (!String.IsNullOrEmpty(read["birthday"].ToString()))
                             obj.birthday = DateTime.Parse(read["birthday"].ToString());
@@ -89,6 +88,31 @@ namespace smss.Connection
                     SqlCommand cmd = new SqlCommand(sql, _connection) { CommandType = CommandType.Text };
                     SqlDataAdapter data = new SqlDataAdapter(cmd);
                     data.Fill(ds.Tables[tableName]);
+                }
+                catch (Exception)
+                {
+
+                    ret = -1;
+                }
+            }
+            _connection.Close();
+            return ret;
+        }
+        public int Grade(gradeObj obj, string procName)
+        {
+            
+            int ret = Status;
+            if (ret >= 0)
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand(procName, _connection) { CommandType = CommandType.StoredProcedure };
+                    cmd.Parameters.AddWithValue("code", obj.code);
+                    cmd.Parameters.AddWithValue("name", obj.name);
+                    cmd.Parameters.AddWithValue("yearin", obj.yearin);
+                    cmd.Parameters.AddWithValue("yearout", obj.yearout);
+                    cmd.Parameters.AddWithValue("note", obj.note);
+                    ret = cmd.ExecuteNonQuery();
                 }
                 catch (Exception)
                 {
