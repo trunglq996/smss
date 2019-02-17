@@ -12,7 +12,6 @@ namespace smss
 {
     public partial class Home : Form
     {
-        
         readonly control.WelcomeHome _wc = new control.WelcomeHome();
         readonly control.Menu _menu = new control.Menu();
         readonly control.Grade _grade = new control.Grade();
@@ -25,9 +24,7 @@ namespace smss
         }
         private void ChangeTab(int tabID)
         {
-            Controls.Remove(_grade);
-            Controls.Remove(_class);
-            Controls.Remove(_student);
+            Remove();
             if (tabID == 1)
             {
                 Controls.Add(_grade);
@@ -50,7 +47,7 @@ namespace smss
         private void loginControl_LoginEvent(string staffcode, string name)
         {
             // Đã đăng nhập thành công
-            Remove();
+            Controls.Remove(_wc);
             Controls.Add(_menu);
             Controls.Add(_grade); // đăng nhập xong chuyển vào trang khóa học
             _menu.staffcode = staffcode;
@@ -73,8 +70,6 @@ namespace smss
         }
         public void Remove()
         {
-            Controls.Remove(_wc);
-            Controls.Remove(_menu);
             Controls.Remove(_grade);
             Controls.Remove(_class);
             Controls.Remove(_student);
