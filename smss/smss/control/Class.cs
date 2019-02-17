@@ -23,6 +23,8 @@ namespace smss.control
         {
             dataClass.ReadOnly = true;
             dataClass.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataClass.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataClass.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             Width = 900;
             Height = 390;
             DataSet ds = new DataSet();
