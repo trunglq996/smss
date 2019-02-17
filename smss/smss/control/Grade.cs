@@ -15,6 +15,7 @@ namespace smss.control
         }
         public string code;
         public string name;
+        private string procName;
         private void ViewData_Load(object sender, EventArgs e)
         {
             dataGrade.ReadOnly = true;
@@ -24,11 +25,17 @@ namespace smss.control
             Width = 900;
             Height = 390;
             groupUpdate.Width = 250;
-            groupUpdate.Height = 380;
+            groupUpdate.Height = 320;
+            groupUpdate.Enabled = false;
 
             groupData.Left = 255;
             groupData.Height = 380;
             groupData.Width = 630;
+
+            groupButton.Width = 250;
+            groupButton.Height = 57;
+            groupButton.Top = 325;
+
             DataSet ds = new DataSet();
             string sql = "select * from grade";
             int ret = new Connection.Connection().GetDataByQuery(ref ds, "grade", sql);
@@ -63,7 +70,7 @@ namespace smss.control
             txtYearOut.Text = row.Cells["yearout"].Value.ToString();
             txtNote.Text = row.Cells["note"].Value.ToString();
         }
-        public void Save(string procName)
+        public int Save(string procName)
         {
             gradeObj obj = new gradeObj() {
                 code = txtMa.Text,
@@ -80,6 +87,35 @@ namespace smss.control
             else
             {
                 MessageBox.Show("Đã có lỗi!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            return ret;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            procName = "Update";
+            groupButton.Enabled = false;
+            groupUpdate.Enabled = true;
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            procName = "Insert";
+            groupButton.Enabled = false;
+            groupUpdate.Enabled = true;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (Save(procName) >=0)
+            {
+                groupButton.Enabled = true;
+                groupUpdate.Enabled = false;
             }
         }
     }
