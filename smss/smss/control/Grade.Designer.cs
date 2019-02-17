@@ -46,6 +46,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.txtYearOut = new System.Windows.Forms.NumericUpDown();
             this.txtYearIn = new System.Windows.Forms.NumericUpDown();
+            this.btnHuy = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrade)).BeginInit();
             this.groupData.SuspendLayout();
             this.groupUpdate.SuspendLayout();
@@ -87,6 +88,7 @@
             // groupUpdate
             // 
             this.groupUpdate.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupUpdate.Controls.Add(this.btnHuy);
             this.groupUpdate.Controls.Add(this.btnSave);
             this.groupUpdate.Controls.Add(this.groupBox5);
             this.groupUpdate.Controls.Add(this.groupBox4);
@@ -103,7 +105,7 @@
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnSave.Location = new System.Drawing.Point(242, 445);
+            this.btnSave.Location = new System.Drawing.Point(147, 441);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(89, 31);
             this.btnSave.TabIndex = 4;
@@ -258,6 +260,17 @@
             this.txtYearIn.Size = new System.Drawing.Size(275, 26);
             this.txtYearIn.TabIndex = 5;
             // 
+            // btnHuy
+            // 
+            this.btnHuy.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnHuy.Location = new System.Drawing.Point(242, 441);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(89, 31);
+            this.btnHuy.TabIndex = 5;
+            this.btnHuy.Text = "Hủy bỏ";
+            this.btnHuy.UseVisualStyleBackColor = false;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            // 
             // Grade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -307,5 +320,6 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.NumericUpDown txtYearOut;
         private System.Windows.Forms.NumericUpDown txtYearIn;
+        private System.Windows.Forms.Button btnHuy;
     }
 }

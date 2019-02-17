@@ -18,6 +18,8 @@ namespace smss.control
         private string procName;
         private void ViewData_Load(object sender, EventArgs e)
         {
+            txtYearIn.Text = "";
+            txtYearOut.Text = "";
             dataGrade.ReadOnly = true;
             dataGrade.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGrade.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -66,8 +68,8 @@ namespace smss.control
             gradeObj obj = new gradeObj() {
                 code = txtMa.Text,
                 name = txtName.Text,
-                yearin = int.Parse(txtYearIn.Text.Trim()),
-                yearout = int.Parse(txtYearOut.Text.Trim()),
+                yearin = int.Parse(txtYearIn.Text.ToString()),
+                yearout = int.Parse(txtYearOut.Text.ToString()),
                 note = txtNote.Text
             };
             int ret = new Connection.Connection().Grade(obj, procName);
@@ -84,7 +86,23 @@ namespace smss.control
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            
+            if (!String.IsNullOrEmpty(code))
+            {
+                int ret = new Connection.Connection().DoSql("delete from grade where code = '" + code + "'");
+                if(ret >= 0)
+                {
+                    MessageBox.Show("Success!", "Thông báo");
+                    loadData();
+                }
+                else
+                {
+                    MessageBox.Show("Error!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không có bản ghi nào được chọn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -96,6 +114,11 @@ namespace smss.control
 
         private void btnNew_Click(object sender, EventArgs e)
         {
+            txtMa.Text = "";
+            txtName.Text = "";
+            txtYearIn.Text = "";
+            txtYearOut.Text = "";
+            txtNote.Text = "";
             procName = "InsertGrade";
             groupButton.Enabled = false;
             groupUpdate.Enabled = true;
@@ -103,6 +126,21 @@ namespace smss.control
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(txtMa.Text))
+            {
+                MessageBox.Show("Chưa nhập mã!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (String.IsNullOrEmpty(txtYearIn.Text))
+            {
+                MessageBox.Show("Chưa nhập năm vào trường!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (String.IsNullOrEmpty(txtYearOut.Text))
+            {
+                MessageBox.Show("Chưa nhập năm ra trường!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (Save(procName) >=0)
             {
                 groupButton.Enabled = true;
@@ -123,6 +161,22 @@ namespace smss.control
             {
                 MessageBox.Show("Lỗi lấy dữ liệu khóa học!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            var rowsCount = dataGrade.SelectedRows.Count;
+            if (rowsCount == 0 || rowsCount > 1 || dataGrade.RowCount == 1)
+            {
+                code = name = "";
+                return;
+            };
+            var row = dataGrade.SelectedRows[0];
+            code = row.Cells["code"].Value.ToString();
+            name = row.Cells["name"].Value.ToString();
+            setValue();
+            groupButton.Enabled = true;
+            groupUpdate.Enabled = false;
         }
     }
 }
