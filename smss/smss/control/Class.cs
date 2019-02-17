@@ -17,18 +17,66 @@ namespace smss.control
         {
             InitializeComponent();
         }
-        public string code;
-        public string name;
+
+        public static string code;
+        public static string name;
         private void Class_Load(object sender, EventArgs e)
         {
+            
             dataClass.ReadOnly = true;
             dataClass.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataClass.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataClass.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+
             Width = 900;
             Height = 390;
+            groupUpdate.Width = 250;
+            groupUpdate.Height = 320;
+            groupUpdate.Enabled = false;
+
+            groupData.Left = 255;
+            groupData.Height = 380;
+            groupData.Width = 630;
+
+            groupButton.Width = 250;
+            groupButton.Height = 57;
+            groupButton.Top = 325;
+
+            loadData();
+        }
+
+        private void dataClass_SelectionChanged(object sender, EventArgs e)
+        {
+            var rowsCount = dataClass.SelectedRows.Count;
+            if (rowsCount == 0 || rowsCount > 1 || dataClass.RowCount == 1)
+            {
+                code = name = "";
+            }
+            else
+            {
+                var row = dataClass.SelectedRows[0];
+                code = row.Cells["code"].Value.ToString();
+                name = row.Cells["name"].Value.ToString();
+                setValue();
+            }
+
+        }
+        public void setValue()
+        {
+            var row = dataClass.SelectedRows[0];
+            txtMa.Text = row.Cells["code"].Value.ToString();
+            txtName.Text = row.Cells["name"].Value.ToString();
+            txtNote.Text = row.Cells["note"].Value.ToString();
+        }
+        public static void loadDataGrade(string code)
+        {
+            //loadData();
+        }
+
+        public void loadData()
+        {
             DataSet ds = new DataSet();
-            string sql = "select * from class";
+            string sql = "select * from class where gradecode = '" + control.Grade.code + "'";
             int ret = new Connection.Connection().GetDataByQuery(ref ds, "class", sql);
             if (ret >= 0)
             {
@@ -40,14 +88,29 @@ namespace smss.control
             }
         }
 
-        private void dataClass_SelectionChanged(object sender, EventArgs e)
+        private void btnNew_Click(object sender, EventArgs e)
         {
-            var rowsCount = dataClass.SelectedRows.Count;
-            if (rowsCount == 0 || rowsCount > 1 || dataClass.RowCount == 1) return;
-            var row = dataClass.SelectedRows[0];
-            if (row == null) return;
-            code = row.Cells["code"].Value.ToString();
-            name = row.Cells["name"].Value.ToString();
+
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

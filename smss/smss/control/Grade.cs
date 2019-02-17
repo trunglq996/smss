@@ -13,8 +13,8 @@ namespace smss.control
         {
             InitializeComponent();
         }
-        public string code;
-        public string name;
+        public static string code;
+        public static string name;
         private string procName;
         private void ViewData_Load(object sender, EventArgs e)
         {
@@ -47,12 +47,13 @@ namespace smss.control
             var rowsCount = dataGrade.SelectedRows.Count;
             if (rowsCount == 0 || rowsCount > 1 || dataGrade.RowCount == 1) {
                 code = name = "";
-                return;
-            };
-            var row = dataGrade.SelectedRows[0];
-            code = row.Cells["code"].Value.ToString();
-            name = row.Cells["name"].Value.ToString();
-            setValue();
+            }
+            else {
+                var row = dataGrade.SelectedRows[0];
+                code = row.Cells["code"].Value.ToString();
+                name = row.Cells["name"].Value.ToString();
+                setValue();
+            }
         }
         public void setValue()
         {

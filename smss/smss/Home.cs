@@ -47,6 +47,7 @@ namespace smss
         private void loginControl_LoginEvent(string staffcode, string name)
         {
             // Đã đăng nhập thành công
+
             Controls.Remove(_wc);
             Controls.Add(_menu);
             Controls.Add(_grade); // đăng nhập xong chuyển vào trang khóa học
