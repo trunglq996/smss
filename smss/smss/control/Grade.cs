@@ -36,17 +36,8 @@ namespace smss.control
             groupButton.Height = 57;
             groupButton.Top = 325;
 
-            DataSet ds = new DataSet();
-            string sql = "select * from grade";
-            int ret = new Connection.Connection().GetDataByQuery(ref ds, "grade", sql);
-            if(ret >= 0)
-            {
-                dataGrade.DataSource = ds.Tables["grade"];
-            }
-            else
-            {
-                MessageBox.Show("Lỗi lấy dữ liệu khóa học!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-            }
+            loadData();
+            
         }
 
         private void dataGrade_SelectionChanged(object sender, EventArgs e)
@@ -98,14 +89,14 @@ namespace smss.control
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            procName = "Update";
+            procName = "UpdateGrade";
             groupButton.Enabled = false;
             groupUpdate.Enabled = true;
         }
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            procName = "Insert";
+            procName = "InsertGrade";
             groupButton.Enabled = false;
             groupUpdate.Enabled = true;
         }
@@ -116,6 +107,21 @@ namespace smss.control
             {
                 groupButton.Enabled = true;
                 groupUpdate.Enabled = false;
+                loadData();
+            }
+        }
+        public void loadData()
+        {
+            DataSet ds = new DataSet();
+            string sql = "select * from grade";
+            int ret = new Connection.Connection().GetDataByQuery(ref ds, "grade", sql);
+            if (ret >= 0)
+            {
+                dataGrade.DataSource = ds.Tables["grade"];
+            }
+            else
+            {
+                MessageBox.Show("Lỗi lấy dữ liệu khóa học!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
     }

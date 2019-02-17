@@ -35,9 +35,7 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.txtNote = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.txtYearOut = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.txtYearIn = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -46,6 +44,8 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.txtYearOut = new System.Windows.Forms.NumericUpDown();
+            this.txtYearIn = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrade)).BeginInit();
             this.groupData.SuspendLayout();
             this.groupUpdate.SuspendLayout();
@@ -55,6 +55,8 @@
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupButton.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtYearOut)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtYearIn)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGrade
@@ -139,13 +141,6 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Năm ra:";
             // 
-            // txtYearOut
-            // 
-            this.txtYearOut.Location = new System.Drawing.Point(6, 25);
-            this.txtYearOut.Name = "txtYearOut";
-            this.txtYearOut.Size = new System.Drawing.Size(275, 26);
-            this.txtYearOut.TabIndex = 0;
-            // 
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.SystemColors.AppWorkspace;
@@ -156,13 +151,6 @@
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Năm vào:";
-            // 
-            // txtYearIn
-            // 
-            this.txtYearIn.Location = new System.Drawing.Point(6, 25);
-            this.txtYearIn.Name = "txtYearIn";
-            this.txtYearIn.Size = new System.Drawing.Size(275, 26);
-            this.txtYearIn.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -246,6 +234,30 @@
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // txtYearOut
+            // 
+            this.txtYearOut.Location = new System.Drawing.Point(6, 25);
+            this.txtYearOut.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.txtYearOut.Name = "txtYearOut";
+            this.txtYearOut.Size = new System.Drawing.Size(275, 26);
+            this.txtYearOut.TabIndex = 4;
+            // 
+            // txtYearIn
+            // 
+            this.txtYearIn.Location = new System.Drawing.Point(6, 25);
+            this.txtYearIn.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.txtYearIn.Name = "txtYearIn";
+            this.txtYearIn.Size = new System.Drawing.Size(275, 26);
+            this.txtYearIn.TabIndex = 5;
+            // 
             // Grade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -263,14 +275,14 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupButton.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtYearOut)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtYearIn)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -285,9 +297,7 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.TextBox txtNote;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox txtYearOut;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox txtYearIn;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.GroupBox groupButton;
@@ -295,5 +305,7 @@
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.NumericUpDown txtYearOut;
+        private System.Windows.Forms.NumericUpDown txtYearIn;
     }
 }
