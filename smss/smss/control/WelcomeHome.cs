@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using smss.Connection;
+using smss.model;
 
 namespace smss.control
 {
@@ -43,15 +44,14 @@ namespace smss.control
             {
                 error.Clear();
             }
-            string sql = "";
-            DataSet ds = new DataSet();
-            int ret = new Connection.Connection().GetDataByQuery(ref ds, "staff", sql);
+            staffObj obj = new staffObj();
+            int ret = new Connection.Connection().Login(ref obj, txtTK.Text, txtMK.Text);
             if(ret >= 0)
             {
-                if(ds.Tables["staff"].Rows.Count > 0)
+                if(!String.IsNullOrEmpty(obj.code))
                 {
                     // đăng nhập thành công
-                    LoginEvent(ds.Tables["staff"].Rows[0]["code"].ToString(), ds.Tables["staff"].Rows[0]["name"].ToString());
+                    LoginEvent(obj.code, obj.name);
                 }
                 else
                 {
@@ -61,9 +61,8 @@ namespace smss.control
             }
             else
             {
-                LoginEvent("1","trung");
                 // có lỗi truy cập dữ liệu
-                //MessageBox.Show("Lỗi đăng nhập!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show("Lỗi đăng nhập!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using smss.model;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -13,7 +14,7 @@ namespace smss.Connection
         public Connection()
         {
             _conStr =
-                @"Data Source=DESKTOP-NGO2712\SQLEXPRESS;Initial Catalog=otest;integrated security=true; Max Pool Size=1024; ";
+                @"Data Source=DESKTOP-NGO2712\SQLEXPRESS;Initial Catalog=smss;integrated security=true; Max Pool Size=1024; ";
             try
             {
                 _connection = new SqlConnection(_conStr);
@@ -43,7 +44,40 @@ namespace smss.Connection
             _connection.Close();
             return ret;
         }
-
+        public int Login(ref staffObj obj,string codeview, string userpass)
+        {
+            int ret = Status;
+            if (ret >= 0)
+            {
+                string sql = "select * from staff where codeview = @codeview and userpass = @userpass";
+                SqlCommand cmd = new SqlCommand(sql, _connection) { CommandType = CommandType.Text };
+                cmd.Parameters.AddWithValue("codeview", codeview);
+                cmd.Parameters.AddWithValue("userpass", userpass);
+                SqlDataReader read = cmd.ExecuteReader();
+                try
+                {
+                    while (read.Read())
+                    {
+                        obj.code = read["code"].ToString();
+                        obj.codeview = read["codeview"].ToString();
+                        obj.name = read["name"].ToString();
+                        if (!String.IsNullOrEmpty(read["birthday"].ToString()))
+                            obj.birthday = DateTime.Parse(read["birthday"].ToString());
+                        obj.photo = read["photo"].ToString();
+                    }
+                }
+                catch
+                {
+                    ret = -1;
+                }
+                finally
+                {
+                    read.Close();
+                }
+            }
+            _connection.Close();
+            return ret;
+        }
         public int GetDataByQuery(ref DataSet ds, string tableName, string sql)
         {
             ds.Tables.Add(tableName);
