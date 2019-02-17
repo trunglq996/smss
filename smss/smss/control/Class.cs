@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using smss.model;
 
 namespace smss.control
 {
@@ -16,7 +17,8 @@ namespace smss.control
         {
             InitializeComponent();
         }
-        public string gradecode;
+        public string code;
+        public string name;
         private void Class_Load(object sender, EventArgs e)
         {
             Width = 900;

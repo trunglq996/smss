@@ -1,4 +1,5 @@
-﻿using System;
+﻿using smss.model;
+using System;
 using System.Data;
 using System.Windows.Forms;
 
@@ -11,7 +12,8 @@ namespace smss.control
         {
             InitializeComponent();
         }
-
+        public string code;
+        public string name;
         private void ViewData_Load(object sender, EventArgs e)
         {
             Width = 900;
@@ -29,5 +31,13 @@ namespace smss.control
             }
         }
 
+        private void dataGrade_SelectionChanged(object sender, EventArgs e)
+        {
+            var rowsCount = dataGrade.SelectedRows.Count;
+            if (rowsCount == 0 || rowsCount > 1 || dataGrade.RowCount == 1) return;
+            var row = dataGrade.SelectedRows[0];
+            if (row == null) return;
+           
+        }
     }
 }

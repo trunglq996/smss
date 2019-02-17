@@ -42,6 +42,7 @@
             this.dataGrade.RowTemplate.Height = 28;
             this.dataGrade.Size = new System.Drawing.Size(916, 394);
             this.dataGrade.TabIndex = 0;
+            this.dataGrade.SelectionChanged += new System.EventHandler(this.dataGrade_SelectionChanged);
             // 
             // Grade
             // 
