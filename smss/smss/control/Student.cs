@@ -19,6 +19,8 @@ namespace smss.control
         public string classcode;
         private void Student_Load(object sender, EventArgs e)
         {
+            dataStudent.ReadOnly = true;
+            dataStudent.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             Width = 900;
             Height = 390;
             DataSet ds = new DataSet();

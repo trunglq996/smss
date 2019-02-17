@@ -39,7 +39,9 @@
             this.dataGrade.Location = new System.Drawing.Point(0, 0);
             this.dataGrade.Margin = new System.Windows.Forms.Padding(0);
             this.dataGrade.Name = "dataGrade";
+            this.dataGrade.ReadOnly = true;
             this.dataGrade.RowTemplate.Height = 28;
+            this.dataGrade.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGrade.Size = new System.Drawing.Size(916, 394);
             this.dataGrade.TabIndex = 0;
             this.dataGrade.SelectionChanged += new System.EventHandler(this.dataGrade_SelectionChanged);

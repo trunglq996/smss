@@ -16,6 +16,8 @@ namespace smss.control
         public string name;
         private void ViewData_Load(object sender, EventArgs e)
         {
+            dataGrade.ReadOnly = true;
+            dataGrade.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             Width = 900;
             Height = 390;
             DataSet ds = new DataSet();
@@ -37,7 +39,8 @@ namespace smss.control
             if (rowsCount == 0 || rowsCount > 1 || dataGrade.RowCount == 1) return;
             var row = dataGrade.SelectedRows[0];
             if (row == null) return;
-           
+            code = row.Cells["code"].Value.ToString();
+            name = row.Cells["name"].Value.ToString();
         }
     }
 }

@@ -21,6 +21,8 @@ namespace smss.control
         public string name;
         private void Class_Load(object sender, EventArgs e)
         {
+            dataClass.ReadOnly = true;
+            dataClass.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             Width = 900;
             Height = 390;
             DataSet ds = new DataSet();
@@ -34,6 +36,16 @@ namespace smss.control
             {
                 MessageBox.Show("Lỗi lấy dữ liệu lớp học!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
+        }
+
+        private void dataClass_SelectionChanged(object sender, EventArgs e)
+        {
+            var rowsCount = dataClass.SelectedRows.Count;
+            if (rowsCount == 0 || rowsCount > 1 || dataClass.RowCount == 1) return;
+            var row = dataClass.SelectedRows[0];
+            if (row == null) return;
+            code = row.Cells["code"].Value.ToString();
+            name = row.Cells["name"].Value.ToString();
         }
     }
 }
