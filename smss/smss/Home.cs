@@ -14,7 +14,7 @@ namespace smss
     {
         readonly control.WelcomeHome _wc = new control.WelcomeHome();
         readonly control.Menu _menu = new control.Menu();
-        readonly control.Grade _grade = new control.Grade();
+        control.Grade _grade = new control.Grade();
         control.Class _class; // khi nào dùng sẽ khai báo
         control.Student _student; // khi nào dùng sẽ khai báo
 
@@ -27,6 +27,7 @@ namespace smss
             Remove();
             if (tabID == 1)
             {
+                _grade = new control.Grade();
                 Controls.Add(_grade);
                 _grade.Location = new Point(0, 67);
             }

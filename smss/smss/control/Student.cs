@@ -22,6 +22,8 @@ namespace smss.control
             dataStudent.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataStudent.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataStudent.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+            dataStudent.MultiSelect = false;
+
             Width = 900;
             Height = 390;
             DataSet ds = new DataSet();

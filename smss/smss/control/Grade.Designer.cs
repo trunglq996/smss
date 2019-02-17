@@ -31,11 +31,14 @@
             this.dataGrade = new System.Windows.Forms.DataGridView();
             this.groupData = new System.Windows.Forms.GroupBox();
             this.groupUpdate = new System.Windows.Forms.GroupBox();
+            this.btnHuy = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.txtNote = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txtYearOut = new System.Windows.Forms.NumericUpDown();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtYearIn = new System.Windows.Forms.NumericUpDown();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -44,20 +47,17 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.txtYearOut = new System.Windows.Forms.NumericUpDown();
-            this.txtYearIn = new System.Windows.Forms.NumericUpDown();
-            this.btnHuy = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrade)).BeginInit();
             this.groupData.SuspendLayout();
             this.groupUpdate.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtYearOut)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtYearIn)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupButton.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtYearOut)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtYearIn)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGrade
@@ -72,7 +72,7 @@
             this.dataGrade.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGrade.Size = new System.Drawing.Size(557, 234);
             this.dataGrade.TabIndex = 0;
-            this.dataGrade.SelectionChanged += new System.EventHandler(this.dataGrade_SelectionChanged);
+            this.dataGrade.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrade_CellClick);
             // 
             // groupData
             // 
@@ -101,6 +101,17 @@
             this.groupUpdate.TabIndex = 2;
             this.groupUpdate.TabStop = false;
             this.groupUpdate.Text = "Cập nhật khóa học";
+            // 
+            // btnHuy
+            // 
+            this.btnHuy.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnHuy.Location = new System.Drawing.Point(242, 441);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(89, 31);
+            this.btnHuy.TabIndex = 5;
+            this.btnHuy.Text = "Hủy bỏ";
+            this.btnHuy.UseVisualStyleBackColor = false;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnSave
             // 
@@ -143,6 +154,18 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Năm ra:";
             // 
+            // txtYearOut
+            // 
+            this.txtYearOut.Location = new System.Drawing.Point(6, 25);
+            this.txtYearOut.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.txtYearOut.Name = "txtYearOut";
+            this.txtYearOut.Size = new System.Drawing.Size(275, 26);
+            this.txtYearOut.TabIndex = 4;
+            // 
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.SystemColors.AppWorkspace;
@@ -153,6 +176,18 @@
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Năm vào:";
+            // 
+            // txtYearIn
+            // 
+            this.txtYearIn.Location = new System.Drawing.Point(6, 25);
+            this.txtYearIn.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.txtYearIn.Name = "txtYearIn";
+            this.txtYearIn.Size = new System.Drawing.Size(275, 26);
+            this.txtYearIn.TabIndex = 5;
             // 
             // groupBox2
             // 
@@ -236,41 +271,6 @@
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // txtYearOut
-            // 
-            this.txtYearOut.Location = new System.Drawing.Point(6, 25);
-            this.txtYearOut.Maximum = new decimal(new int[] {
-            9999,
-            0,
-            0,
-            0});
-            this.txtYearOut.Name = "txtYearOut";
-            this.txtYearOut.Size = new System.Drawing.Size(275, 26);
-            this.txtYearOut.TabIndex = 4;
-            // 
-            // txtYearIn
-            // 
-            this.txtYearIn.Location = new System.Drawing.Point(6, 25);
-            this.txtYearIn.Maximum = new decimal(new int[] {
-            9999,
-            0,
-            0,
-            0});
-            this.txtYearIn.Name = "txtYearIn";
-            this.txtYearIn.Size = new System.Drawing.Size(275, 26);
-            this.txtYearIn.TabIndex = 5;
-            // 
-            // btnHuy
-            // 
-            this.btnHuy.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnHuy.Location = new System.Drawing.Point(242, 441);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(89, 31);
-            this.btnHuy.TabIndex = 5;
-            this.btnHuy.Text = "Hủy bỏ";
-            this.btnHuy.UseVisualStyleBackColor = false;
-            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
-            // 
             // Grade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -288,14 +288,14 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtYearOut)).EndInit();
             this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtYearIn)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupButton.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtYearOut)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtYearIn)).EndInit();
             this.ResumeLayout(false);
 
         }

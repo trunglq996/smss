@@ -61,7 +61,7 @@
             this.dataClass.RowTemplate.Height = 28;
             this.dataClass.Size = new System.Drawing.Size(557, 234);
             this.dataClass.TabIndex = 0;
-            this.dataClass.SelectionChanged += new System.EventHandler(this.dataClass_SelectionChanged);
+            this.dataClass.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataClass_CellClick);
             // 
             // groupButton
             // 

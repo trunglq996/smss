@@ -27,6 +27,7 @@ namespace smss.control
             dataClass.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataClass.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataClass.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+            dataClass.MultiSelect = false;
 
             Width = 900;
             Height = 390;
@@ -44,27 +45,20 @@ namespace smss.control
             groupUpdate.Text = "Cập nhật lớp học (" + Grade.name + ")";
             groupData.Text = "Danh mục lớp học (" + Grade.name + ")";
             loadData();
+            setValue();
         }
 
-        private void dataClass_SelectionChanged(object sender, EventArgs e)
-        {
-            var rowsCount = dataClass.SelectedRows.Count;
-            if (rowsCount == 0 || rowsCount > 1 || dataClass.RowCount == 1)
-            {
-                code = name = "";
-            }
-            else
-            {
-                var row = dataClass.SelectedRows[0];
-                code = row.Cells["code"].Value.ToString();
-                name = row.Cells["name"].Value.ToString();
-                setValue();
-            }
-
-        }
         public void setValue()
         {
+            if (dataClass.SelectedRows.Count == 0)
+            {
+                return;
+            }
             var row = dataClass.SelectedRows[0];
+
+            code = row.Cells["code"].Value.ToString();
+            name = row.Cells["name"].Value.ToString();
+
             txtMa.Text = row.Cells["code"].Value.ToString();
             txtName.Text = row.Cells["name"].Value.ToString();
             txtNote.Text = row.Cells["note"].Value.ToString();
@@ -112,6 +106,11 @@ namespace smss.control
         private void btnHuy_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataClass_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            setValue();
         }
     }
 }
