@@ -41,7 +41,8 @@ namespace smss.control
             groupButton.Width = 250;
             groupButton.Height = 57;
             groupButton.Top = 325;
-
+            groupUpdate.Text = "Cập nhật lớp học (" + Grade.name + ")";
+            groupData.Text = "Danh mục lớp học (" + Grade.name + ")";
             loadData();
         }
 

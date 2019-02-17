@@ -27,15 +27,18 @@ namespace smss.control
         {
             Width = 900;
             Height = 65;
+            btnStudent.Enabled = false;
         }
 
         private void btnGrade_Click(object sender, EventArgs e)
         {
+            btnStudent.Enabled = false;
             Change(1);// gọi đến sự kiện ChangeTab ở Home.cs
         }
 
         private void btnClass_Click(object sender, EventArgs e)
         {
+            btnStudent.Enabled = true;
             Change(2); //gọi đến sự kiện ChangeTab ở Home.cs
         }
 
