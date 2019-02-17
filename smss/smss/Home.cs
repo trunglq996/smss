@@ -15,8 +15,8 @@ namespace smss
         readonly control.WelcomeHome _wc = new control.WelcomeHome();
         readonly control.Menu _menu = new control.Menu();
         readonly control.Grade _grade = new control.Grade();
-        readonly control.Class _class = new control.Class();
-        readonly control.Student _student = new control.Student();
+        control.Class _class = new control.Class();
+        control.Student _student = new control.Student();
 
         public Home()
         {
@@ -33,12 +33,14 @@ namespace smss
             }
             else if(tabID == 2)
             {
+                _class = new control.Class(); // tạo lại userControl mới để chạy lại loadData theo gradecode
                 Controls.Add(_class);
                 _class.Location = new Point(0, 67);
                 _class.Show();
             }
             else if(tabID == 3)
             {
+                _student = new control.Student(); // tạo lại userControl mới để chạy lại loadData theo classcode
                 Controls.Add(_student);
                 _student.Location = new Point(0, 67);
                 _student.Show();

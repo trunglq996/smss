@@ -68,11 +68,6 @@ namespace smss.control
             txtName.Text = row.Cells["name"].Value.ToString();
             txtNote.Text = row.Cells["note"].Value.ToString();
         }
-        public static void loadDataGrade(string code)
-        {
-            //loadData();
-        }
-
         public void loadData()
         {
             DataSet ds = new DataSet();
