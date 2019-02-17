@@ -16,7 +16,6 @@ namespace smss.control
         {
             InitializeComponent();
         }
-        public string classcode;
         private void Student_Load(object sender, EventArgs e)
         {
             dataStudent.ReadOnly = true;
