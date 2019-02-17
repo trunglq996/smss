@@ -71,8 +71,13 @@ namespace smss.control
         }
         public void loadData()
         {
+            if(String.IsNullOrEmpty(Grade.code))
+            {
+                MessageBox.Show("Chưa chọn khóa học nào!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             DataSet ds = new DataSet();
-            string sql = "select * from class where gradecode = '" + control.Grade.code + "'";
+            string sql = "select * from class where gradecode = '" + Grade.code + "'";
             int ret = new Connection.Connection().GetDataByQuery(ref ds, "class", sql);
             if (ret >= 0)
             {

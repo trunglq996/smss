@@ -15,8 +15,8 @@ namespace smss
         readonly control.WelcomeHome _wc = new control.WelcomeHome();
         readonly control.Menu _menu = new control.Menu();
         readonly control.Grade _grade = new control.Grade();
-        control.Class _class = new control.Class();
-        control.Student _student = new control.Student();
+        control.Class _class; // khi nào dùng sẽ khai báo
+        control.Student _student; // khi nào dùng sẽ khai báo
 
         public Home()
         {
@@ -29,21 +29,18 @@ namespace smss
             {
                 Controls.Add(_grade);
                 _grade.Location = new Point(0, 67);
-                _grade.Show();
             }
             else if(tabID == 2)
             {
                 _class = new control.Class(); // tạo lại userControl mới để chạy lại loadData theo gradecode
                 Controls.Add(_class);
                 _class.Location = new Point(0, 67);
-                _class.Show();
             }
             else if(tabID == 3)
             {
                 _student = new control.Student(); // tạo lại userControl mới để chạy lại loadData theo classcode
                 Controls.Add(_student);
                 _student.Location = new Point(0, 67);
-                _student.Show();
             }
         }
         private void loginControl_LoginEvent(string staffcode, string name)
@@ -57,8 +54,6 @@ namespace smss
             _menu.Hello(name);
             _menu.Location = new Point(0, 0);
             _grade.Location = new Point(0, 67);
-            _menu.Show();
-            _grade.Show();
         }
         private void Home_Load(object sender, EventArgs e)
         {
@@ -69,7 +64,6 @@ namespace smss
             Height = 500;
             Controls.Add(_wc);
             _wc.Location = new Point(250, 130);
-            _wc.Show();
         }
         public void Remove()
         {

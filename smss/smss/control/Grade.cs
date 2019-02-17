@@ -38,22 +38,21 @@ namespace smss.control
             groupButton.Height = 57;
             groupButton.Top = 325;
 
-            loadData();
-            
+            loadData();            
         }
 
         private void dataGrade_SelectionChanged(object sender, EventArgs e)
         {
             var rowsCount = dataGrade.SelectedRows.Count;
-            if (rowsCount == 0 || rowsCount > 1 || dataGrade.RowCount == 1) {
+            if (rowsCount == 0 || rowsCount > 1 || dataGrade.RowCount == 1 || dataGrade.RowCount - 1 == dataGrade.SelectedRows[0].Index)
+            {
                 code = name = "";
+                return;
             }
-            else {
-                var row = dataGrade.SelectedRows[0];
-                code = row.Cells["code"].Value.ToString();
-                name = row.Cells["name"].Value.ToString();
-                setValue();
-            }
+            var row = dataGrade.SelectedRows[0];
+            code = row.Cells["code"].Value.ToString();
+            name = row.Cells["name"].Value.ToString();
+            setValue();
         }
         public void setValue()
         {
