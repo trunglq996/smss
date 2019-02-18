@@ -24,6 +24,7 @@ namespace smss.control
             dataGrade.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGrade.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGrade.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+            dataGrade.AllowUserToAddRows = false;
             dataGrade.MultiSelect = false;
             Width = 900;
             Height = 390;
@@ -50,10 +51,8 @@ namespace smss.control
                 return;
             }
             var row = dataGrade.SelectedRows[0];
-
             code = row.Cells["code"].Value.ToString();
             name = row.Cells["name"].Value.ToString();
-
             txtMa.Text = row.Cells["code"].Value.ToString();
             txtName.Text = row.Cells["name"].Value.ToString();
             txtYearIn.Text = row.Cells["yearin"].Value.ToString();
@@ -171,15 +170,6 @@ namespace smss.control
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            var rowsCount = dataGrade.SelectedRows.Count;
-            if (rowsCount == 0 || rowsCount > 1 || dataGrade.RowCount == 1)
-            {
-                code = name = "";
-                return;
-            };
-            var row = dataGrade.SelectedRows[0];
-            code = row.Cells["code"].Value.ToString();
-            name = row.Cells["name"].Value.ToString();
             setValue();
             groupButton.Enabled = true;
             groupUpdate.Enabled = false;

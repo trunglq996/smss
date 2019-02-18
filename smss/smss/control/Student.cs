@@ -23,6 +23,7 @@ namespace smss.control
             dataStudent.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataStudent.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             dataStudent.MultiSelect = false;
+            dataStudent.AllowUserToAddRows = false;
 
             Width = 900;
             Height = 390;

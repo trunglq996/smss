@@ -29,6 +29,7 @@ namespace smss.control
             dataClass.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataClass.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             dataClass.MultiSelect = false;
+            dataClass.AllowUserToAddRows = false;
 
             Width = 900;
             Height = 390;
@@ -168,15 +169,6 @@ namespace smss.control
         }
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            var rowsCount = dataClass.SelectedRows.Count;
-            if (rowsCount == 0 || rowsCount > 1 || dataClass.RowCount == 1)
-            {
-                code = name = "";
-                return;
-            };
-            var row = dataClass.SelectedRows[0];
-            code = row.Cells["code"].Value.ToString();
-            name = row.Cells["name"].Value.ToString();
             setValue();
             groupButton.Enabled = true;
             groupUpdate.Enabled = false;
