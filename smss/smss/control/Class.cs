@@ -95,7 +95,29 @@ namespace smss.control
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            if (!String.IsNullOrEmpty(code))
+            {
 
+                DialogResult result = MessageBox.Show("Bản ghi sẽ mất vĩnh viễn?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    int ret = new Connection.Connection().DoSql("delete from class where code = '" + code + "'");
+                    if (ret >= 0)
+                    {
+                        MessageBox.Show("Success!", "Thông báo");
+                        loadData();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Không có bản ghi nào được chọn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)

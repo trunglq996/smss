@@ -113,6 +113,7 @@ namespace smss.control
             procName = "UpdateGrade";
             groupButton.Enabled = false;
             groupUpdate.Enabled = true;
+            groupData.Enabled = false;
         }
 
         private void btnNew_Click(object sender, EventArgs e)
@@ -125,6 +126,7 @@ namespace smss.control
             procName = "InsertGrade";
             groupButton.Enabled = false;
             groupUpdate.Enabled = true;
+            groupData.Enabled = false;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -148,6 +150,7 @@ namespace smss.control
             {
                 groupButton.Enabled = true;
                 groupUpdate.Enabled = false;
+                groupData.Enabled = true;
                 loadData();
             }
         }
@@ -180,6 +183,7 @@ namespace smss.control
             setValue();
             groupButton.Enabled = true;
             groupUpdate.Enabled = false;
+            groupData.Enabled = true;
         }
 
         private void dataGrade_CellClick(object sender, DataGridViewCellEventArgs e)
