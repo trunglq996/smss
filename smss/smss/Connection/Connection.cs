@@ -14,7 +14,7 @@ namespace smss.Connection
         public Connection()
         {
             _conStr =
-                @"Data Source=DESKTOP-NGO2712\SQLEXPRESS;Initial Catalog=smss;integrated security=true; Max Pool Size=1024; ";
+                @"Data Source=Trung;Initial Catalog=smss;integrated security=true; Max Pool Size=1024; ";
             try
             {
                 _connection = new SqlConnection(_conStr);

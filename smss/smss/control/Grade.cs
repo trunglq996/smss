@@ -85,16 +85,22 @@ namespace smss.control
         {
             if (!String.IsNullOrEmpty(code))
             {
-                int ret = new Connection.Connection().DoSql("delete from grade where code = '" + code + "'");
-                if(ret >= 0)
+
+                DialogResult result = MessageBox.Show("Bản ghi sẽ mất vĩnh viễn?", "Warning",MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
                 {
-                    MessageBox.Show("Success!", "Thông báo");
-                    loadData();
+                    int ret = new Connection.Connection().DoSql("delete from grade where code = '" + code + "'");
+                    if (ret >= 0)
+                    {
+                        MessageBox.Show("Success!", "Thông báo");
+                        loadData();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Error!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+
             }
             else
             {
