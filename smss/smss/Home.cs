@@ -51,7 +51,6 @@ namespace smss
             Controls.Remove(_wc);
             Controls.Add(_menu);
             Controls.Add(_grade); // đăng nhập xong chuyển vào trang khóa học
-            _menu.staffcode = staffcode;
             _menu.Hello(name);
             _menu.Location = new Point(0, 0);
             _grade.Location = new Point(0, 67);

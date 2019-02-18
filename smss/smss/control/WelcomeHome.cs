@@ -51,6 +51,7 @@ namespace smss.control
                 if(!String.IsNullOrEmpty(obj.code))
                 {
                     // đăng nhập thành công
+                    Menu.StaffCode = obj.code;// code của người đăng nhập
                     LoginEvent(obj.code, obj.name);
                 }
                 else

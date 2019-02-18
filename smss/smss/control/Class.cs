@@ -20,6 +20,7 @@ namespace smss.control
 
         public static string code;
         public static string name;
+        private string procName;
         private void Class_Load(object sender, EventArgs e)
         {
             
@@ -85,12 +86,21 @@ namespace smss.control
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-
+            txtMa.Text = "";
+            txtName.Text = "";
+            txtNote.Text = "";
+            procName = "InsertClass";
+            groupButton.Enabled = false;
+            groupUpdate.Enabled = true;
+            groupData.Enabled = false;
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-
+            procName = "UpdateClass";
+            groupButton.Enabled = false;
+            groupUpdate.Enabled = true;
+            groupData.Enabled = false;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -122,12 +132,55 @@ namespace smss.control
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
+            if (String.IsNullOrEmpty(txtMa.Text))
+            {
+                MessageBox.Show("Chưa nhập mã!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (Save(procName) >= 0)
+            {
+                groupButton.Enabled = true;
+                groupUpdate.Enabled = false;
+                groupData.Enabled = true;
+                loadData();
+            }
         }
-
+        public int Save(string procName)
+        {
+            classObj obj = new classObj()
+            {
+                code = txtMa.Text,
+                name = txtName.Text,
+                staffcode = Menu.StaffCode,
+                gradecode = Grade.code,
+                note = txtNote.Text
+            };
+            int ret = new Connection.Connection().Class(obj, procName);
+            if (ret > 0)
+            {
+                MessageBox.Show("Cập nhật thành công!", "Thông báo");
+            }
+            else
+            {
+                MessageBox.Show("Đã có lỗi!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            return ret;
+        }
         private void btnHuy_Click(object sender, EventArgs e)
         {
-
+            var rowsCount = dataClass.SelectedRows.Count;
+            if (rowsCount == 0 || rowsCount > 1 || dataClass.RowCount == 1)
+            {
+                code = name = "";
+                return;
+            };
+            var row = dataClass.SelectedRows[0];
+            code = row.Cells["code"].Value.ToString();
+            name = row.Cells["name"].Value.ToString();
+            setValue();
+            groupButton.Enabled = true;
+            groupUpdate.Enabled = false;
+            groupData.Enabled = true;
         }
 
         private void dataClass_CellClick(object sender, DataGridViewCellEventArgs e)

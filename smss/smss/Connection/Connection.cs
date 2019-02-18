@@ -123,5 +123,30 @@ namespace smss.Connection
             _connection.Close();
             return ret;
         }
+        public int Class(classObj obj, string procName)
+        {
+
+            int ret = Status;
+            if (ret >= 0)
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand(procName, _connection) { CommandType = CommandType.StoredProcedure };
+                    cmd.Parameters.AddWithValue("code", obj.code);
+                    cmd.Parameters.AddWithValue("name", obj.name);
+                    cmd.Parameters.AddWithValue("staffcode", obj.staffcode);
+                    cmd.Parameters.AddWithValue("gradecode", obj.gradecode);
+                    cmd.Parameters.AddWithValue("note", obj.note);
+                    ret = cmd.ExecuteNonQuery();
+                }
+                catch (Exception)
+                {
+
+                    ret = -1;
+                }
+            }
+            _connection.Close();
+            return ret;
+        }
     }
 }

@@ -18,7 +18,7 @@ namespace smss.control
         }
         public delegate void ChangeTab(int tabID);
         public event ChangeTab Change;
-        public string staffcode;
+        public static string StaffCode;
         public void Hello(string name)
         {
             lbHello.Text = "[" + name + "]";
