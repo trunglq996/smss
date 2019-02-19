@@ -51,10 +51,17 @@ namespace smss
             if (!String.IsNullOrEmpty(code))
             {
                 // thực hiện mở form cập nhật
+                _insertStudent = new control.SqlStudent(code);
+                _insertStudent.click += SqlClick;
+                Width = _insertStudent.Width + 15;
+                Height = _insertStudent.Height + 35;
+                Controls.Remove(_menu);
+                Controls.Remove(_student);
+                Controls.Add(_insertStudent);
             }
             else
             {
-                _insertStudent = new control.SqlStudent();
+                _insertStudent = new control.SqlStudent("");
                 _insertStudent.click += SqlClick;
                 Width = _insertStudent.Width + 15;
                 Height = _insertStudent.Height + 35;

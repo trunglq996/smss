@@ -2,25 +2,45 @@
 using System.Windows.Forms;
 using smss.Connection;
 using smss.model;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace smss.control
 {
     public partial class SqlStudent : UserControl
     {
-        public SqlStudent()
+        public SqlStudent(string Code)
         {
             InitializeComponent();
+            code = Code;
         }
         public delegate void ReturnHome(bool kq);
         public event ReturnHome click;
         private string url = "";
-        public static string code;
+        private string urlUser = @"C:\Users\quang\Documents\GitHub\smss\smss\smss\image\user.png";
+        private string code;
         private void SqlStudent_Load(object sender, EventArgs e)
         {
             label1.Text = Grade.name + " (" + Class.name + ")";
             if (!String.IsNullOrEmpty(code))
             {
-
+                string sql = "select * from student where code = '" + code + "'";
+                DataSet ds = new DataSet();
+                int ret = new Connection.Connection().GetDataByQuery(ref ds, "student", sql);
+                if(ret >= 0 && ds.Tables["student"].Rows.Count > 0)
+                {
+                    url = ds.Tables["student"].Rows[0]["photo"].ToString();
+                    if(!String.IsNullOrEmpty(url))
+                        pictureBox1.Load(url);
+                    else
+                    {
+                        pictureBox1.Load(urlUser);
+                    }
+                    txtName.Text = ds.Tables["student"].Rows[0]["name"].ToString();
+                    txtCodeview.Text = ds.Tables["student"].Rows[0]["codeview"].ToString();
+                    txtNote.Text = ds.Tables["student"].Rows[0]["note"].ToString();
+                    dateTimePicker1.Value = DateTime.Parse(ds.Tables["student"].Rows[0]["birthday"].ToString());
+                }
             }
         }
 

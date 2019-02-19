@@ -20,6 +20,7 @@ namespace smss.control
         public delegate void UpdateStudent(string code);
         public event UpdateStudent update;
         private string code;
+        private string urlUser = @"C:\Users\quang\Documents\GitHub\smss\smss\smss\image\user.png";
         private void Student_Load(object sender, EventArgs e)
         {
             dataStudent.ReadOnly = true;
@@ -51,7 +52,7 @@ namespace smss.control
             txtGrade.Left = 365;
             txtClass.Left = 495;
 
-            pictureBox1.Load(@"C:\Users\quang\Documents\GitHub\smss\smss\smss\image\user.png");
+            pictureBox1.Load(urlUser);
             LoadData();
         }
 
@@ -77,6 +78,7 @@ namespace smss.control
             if (dataStudent.SelectedRows.Count == 0)
             {
                 code = "";
+                pictureBox1.Load(urlUser);
                 btnEdit.Visible = false;
                 btnDelete.Visible = false;
                // groupUpdate.Visible = false;
@@ -87,7 +89,12 @@ namespace smss.control
             code = row.Cells[0].Value.ToString();
             lbCodeView.Text = row.Cells[2].Value.ToString();
             lbName.Text = row.Cells[3].Value.ToString();
-            pictureBox1.Load(@"C:\Users\quang\Documents\GitHub\smss\smss\smss\image\1.jpg");
+            if(!String.IsNullOrEmpty(row.Cells[1].Value.ToString()))
+                pictureBox1.Load(row.Cells[1].Value.ToString());
+            else
+            {
+                pictureBox1.Load(urlUser);
+            }
 
             btnEdit.Visible = true;
             btnDelete.Visible = true;

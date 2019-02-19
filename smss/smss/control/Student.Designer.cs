@@ -79,7 +79,7 @@
             // 
             this.lbName.AutoSize = true;
             this.lbName.Font = new System.Drawing.Font("Cambria", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.Location = new System.Drawing.Point(114, 362);
+            this.lbName.Location = new System.Drawing.Point(70, 363);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(147, 26);
             this.lbName.TabIndex = 13;
@@ -90,7 +90,7 @@
             // 
             this.lbCodeView.AutoSize = true;
             this.lbCodeView.Font = new System.Drawing.Font("Cambria", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCodeView.Location = new System.Drawing.Point(114, 336);
+            this.lbCodeView.Location = new System.Drawing.Point(70, 337);
             this.lbCodeView.Name = "lbCodeView";
             this.lbCodeView.Size = new System.Drawing.Size(140, 26);
             this.lbCodeView.TabIndex = 12;
