@@ -35,11 +35,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtCodeview = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtNote = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnImage = new System.Windows.Forms.Button();
@@ -122,7 +122,7 @@
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.groupBox5.Controls.Add(this.textBox2);
+            this.groupBox5.Controls.Add(this.txtCodeview);
             this.groupBox5.Location = new System.Drawing.Point(12, 25);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(520, 63);
@@ -130,17 +130,17 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Mã sinh viên: ";
             // 
-            // textBox2
+            // txtCodeview
             // 
-            this.textBox2.Location = new System.Drawing.Point(6, 25);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(508, 26);
-            this.textBox2.TabIndex = 0;
+            this.txtCodeview.Location = new System.Drawing.Point(6, 25);
+            this.txtCodeview.Name = "txtCodeview";
+            this.txtCodeview.Size = new System.Drawing.Size(508, 26);
+            this.txtCodeview.TabIndex = 0;
             // 
             // groupBox6
             // 
             this.groupBox6.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.groupBox6.Controls.Add(this.textBox3);
+            this.groupBox6.Controls.Add(this.txtName);
             this.groupBox6.Location = new System.Drawing.Point(12, 94);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(520, 63);
@@ -148,17 +148,17 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Tên sinh viên: ";
             // 
-            // textBox3
+            // txtName
             // 
-            this.textBox3.Location = new System.Drawing.Point(6, 25);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(508, 26);
-            this.textBox3.TabIndex = 0;
+            this.txtName.Location = new System.Drawing.Point(6, 25);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(508, 26);
+            this.txtName.TabIndex = 0;
             // 
             // groupBox7
             // 
             this.groupBox7.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.groupBox7.Controls.Add(this.textBox4);
+            this.groupBox7.Controls.Add(this.txtNote);
             this.groupBox7.Location = new System.Drawing.Point(12, 231);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(520, 123);
@@ -166,13 +166,13 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Ghi chú: ";
             // 
-            // textBox4
+            // txtNote
             // 
-            this.textBox4.Location = new System.Drawing.Point(6, 25);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(508, 90);
-            this.textBox4.TabIndex = 0;
+            this.txtNote.Location = new System.Drawing.Point(6, 25);
+            this.txtNote.Multiline = true;
+            this.txtNote.Name = "txtNote";
+            this.txtNote.Size = new System.Drawing.Size(508, 90);
+            this.txtNote.TabIndex = 0;
             // 
             // label1
             // 
@@ -205,6 +205,7 @@
             this.btnImage.TabIndex = 8;
             this.btnImage.Text = "Chọn ảnh";
             this.btnImage.UseVisualStyleBackColor = false;
+            this.btnImage.Click += new System.EventHandler(this.btnImage_Click);
             // 
             // btnXong
             // 
@@ -272,11 +273,11 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtNote;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtCodeview;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnImage;
         private System.Windows.Forms.GroupBox groupBox3;

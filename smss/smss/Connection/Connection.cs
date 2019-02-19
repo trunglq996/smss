@@ -169,5 +169,34 @@ namespace smss.Connection
             _connection.Close();
             return ret;
         }
+
+        public int Student(studentObj obj, string procName)
+        {
+
+            int ret = Status;
+            if (ret >= 0)
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand(procName, _connection) { CommandType = CommandType.StoredProcedure };
+                    cmd.Parameters.AddWithValue("code", obj.code);
+                    cmd.Parameters.AddWithValue("photo", obj.photo);
+                    cmd.Parameters.AddWithValue("codeview", obj.codeview);
+                    cmd.Parameters.AddWithValue("name", obj.name);
+                    cmd.Parameters.AddWithValue("birthday", obj.birthday);
+                    cmd.Parameters.AddWithValue("gradecode", obj.gradecode);
+                    cmd.Parameters.AddWithValue("classcode", obj.classcode);
+                    cmd.Parameters.AddWithValue("note", obj.note);
+                    ret = cmd.ExecuteNonQuery();
+                }
+                catch (Exception)
+                {
+
+                    ret = -1;
+                }
+            }
+            _connection.Close();
+            return ret;
+        }
     }
 }
