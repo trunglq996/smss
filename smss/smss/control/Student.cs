@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using smss.model;
 
 namespace smss.control
 {
@@ -16,6 +17,7 @@ namespace smss.control
         {
             InitializeComponent();
         }
+        private studentObj obj = null;
         private void Student_Load(object sender, EventArgs e)
         {
             dataStudent.ReadOnly = true;
@@ -40,6 +42,13 @@ namespace smss.control
             //groupButton.Width = 250;
             //groupButton.Height = 57;
             //groupButton.Top = 325;
+            txtGrade.Text = "Khóa: " + Grade.name;
+            txtClass.Text = "Lớp: " + Class.name;
+            txtGrade.Width = 130;
+            txtClass.Width = 130;
+            txtGrade.Left = 365;
+            txtClass.Left = 495;
+            pictureBox1.Load(@"C:\Users\quang\Documents\GitHub\smss\smss\smss\image\user.png");
             LoadData();
         }
 
@@ -62,7 +71,28 @@ namespace smss.control
         }
         public void SetValue()
         {
-
+            if (dataStudent.SelectedRows.Count == 0)
+            {
+                obj = null;
+               // groupUpdate.Visible = false;
+                return;
+            }
+            var row = dataStudent.SelectedRows[0];
+            obj = new studentObj()
+            {
+                code = row.Cells[0].Value.ToString(),
+                photo = row.Cells[1].Value.ToString(),
+                codeview = row.Cells[2].Value.ToString(),
+                name = row.Cells[3].Value.ToString(),
+                birthday = DateTime.Now,
+                note = row.Cells[5].Value.ToString(),
+                gradecode = Grade.code,
+                classcode = Class.code
+            };
+            // lb
+            lbCodeView.Text = obj.codeview;
+            lbName.Text = obj.name;
+            pictureBox1.Load(@"C:\Users\quang\Documents\GitHub\smss\smss\smss\image\1.jpg");
         }
 
         private void btnNew_Click(object sender, EventArgs e)
