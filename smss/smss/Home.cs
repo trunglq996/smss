@@ -55,12 +55,37 @@ namespace smss
             else
             {
                 _insertStudent = new control.SqlStudent();
+                _insertStudent.click += SqlClick;
                 Width = _insertStudent.Width + 15;
                 Height = _insertStudent.Height + 35;
                 Controls.Remove(_menu);
                 Controls.Remove(_student);
                 Controls.Add(_insertStudent);
                 // thực hiện mở form  thêm mới
+            }
+        }
+        private void SqlClick(bool kq)
+        {
+            if(!kq)
+            {
+                // chức năng hủy
+                Width = 905;
+                Height = 500;
+                Controls.Remove(_insertStudent);
+                Controls.Add(_menu);
+                Controls.Add(_student);
+            }
+            else
+            {
+                // đã lưu thành công
+                Width = 905;
+                Height = 500;
+                Controls.Remove(_insertStudent);
+                Controls.Add(_menu);
+                _student = new control.Student(); // thực hiện load lại data
+                _student.update += UpdateStudent;
+                Controls.Add(_student);
+                _student.Location = new Point(0, 67);
             }
         }
         private void loginControl_LoginEvent(string staffcode, string name)

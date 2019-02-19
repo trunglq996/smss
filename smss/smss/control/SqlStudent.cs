@@ -16,10 +16,21 @@ namespace smss.control
         {
             InitializeComponent();
         }
-
+        public delegate void ReturnHome(bool kq);
+        public event ReturnHome click;
         private void SqlStudent_Load(object sender, EventArgs e)
         {
             label1.Text = Grade.name + " (" + Class.name + ")";
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            click(false);
+        }
+
+        private void btnXong_Click(object sender, EventArgs e)
+        {
+            click(true);
         }
     }
 }

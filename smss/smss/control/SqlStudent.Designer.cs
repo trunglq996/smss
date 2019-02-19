@@ -205,7 +205,7 @@
             // 
             // btnImage
             // 
-            this.btnImage.BackColor = System.Drawing.Color.SlateGray;
+            this.btnImage.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnImage.Location = new System.Drawing.Point(24, 338);
             this.btnImage.Name = "btnImage";
             this.btnImage.Size = new System.Drawing.Size(225, 47);
@@ -222,6 +222,7 @@
             this.btnXong.TabIndex = 5;
             this.btnXong.Text = "Xong";
             this.btnXong.UseVisualStyleBackColor = false;
+            this.btnXong.Click += new System.EventHandler(this.btnXong_Click);
             // 
             // btnHuy
             // 
@@ -232,6 +233,7 @@
             this.btnHuy.TabIndex = 6;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = false;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // SqlStudent
             // 
