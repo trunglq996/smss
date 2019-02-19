@@ -56,10 +56,11 @@
             this.dataStudent.RowTemplate.Height = 28;
             this.dataStudent.Size = new System.Drawing.Size(384, 120);
             this.dataStudent.TabIndex = 0;
+            this.dataStudent.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataStudent_CellClick);
             // 
             // groupUpdate
             // 
-            this.groupUpdate.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.groupUpdate.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.groupUpdate.Controls.Add(this.btnEdit);
             this.groupUpdate.Controls.Add(this.btnDelete);
             this.groupUpdate.Controls.Add(this.groupBox1);
@@ -97,14 +98,14 @@
             // 
             // groupData
             // 
-            this.groupData.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupData.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.groupData.Controls.Add(this.groupData2);
             this.groupData.Controls.Add(this.btnNew);
             this.groupData.Location = new System.Drawing.Point(314, 2);
             this.groupData.Margin = new System.Windows.Forms.Padding(2);
             this.groupData.Name = "groupData";
             this.groupData.Padding = new System.Windows.Forms.Padding(2);
-            this.groupData.Size = new System.Drawing.Size(442, 339);
+            this.groupData.Size = new System.Drawing.Size(442, 379);
             this.groupData.TabIndex = 4;
             this.groupData.TabStop = false;
             // 
@@ -140,7 +141,7 @@
             // 
             // btnNew
             // 
-            this.btnNew.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnNew.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnNew.Location = new System.Drawing.Point(8, 1);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(75, 27);

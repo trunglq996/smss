@@ -62,5 +62,10 @@ namespace smss.control
         {
 
         }
+
+        private void dataStudent_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
