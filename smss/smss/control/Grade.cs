@@ -26,6 +26,7 @@ namespace smss.control
             dataGrade.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             dataGrade.AllowUserToAddRows = false;
             dataGrade.MultiSelect = false;
+
             Width = 900;
             Height = 390;
             groupUpdate.Width = 250;
@@ -50,13 +51,13 @@ namespace smss.control
                 return;
             }
             var row = dataGrade.SelectedRows[0];
-            code = row.Cells["code"].Value.ToString();
-            name = row.Cells["name"].Value.ToString();
-            txtMa.Text = row.Cells["codeview"].Value.ToString();
-            txtName.Text = row.Cells["name"].Value.ToString();
-            txtYearIn.Text = row.Cells["yearin"].Value.ToString();
-            txtYearOut.Text = row.Cells["yearout"].Value.ToString();
-            txtNote.Text = row.Cells["note"].Value.ToString();
+            code = row.Cells[0].Value.ToString();
+            name = row.Cells[2].Value.ToString();
+            txtMa.Text = row.Cells[1].Value.ToString();
+            txtName.Text = row.Cells[2].Value.ToString();
+            txtYearIn.Text = row.Cells[3].Value.ToString();
+            txtYearOut.Text = row.Cells[4].Value.ToString();
+            txtNote.Text = row.Cells[5].Value.ToString();
         }
         public int Save(string procName)
         {
@@ -161,11 +162,12 @@ namespace smss.control
         public void loadData()
         {
             DataSet ds = new DataSet();
-            string sql = "select * from grade";
+            string sql = "select code, codeview N'Mã',name N'Tên',yearin N'Năm vào',yearout N'Năm ra',note N'Ghi chú' from grade";
             int ret = new Connection.Connection().GetDataByQuery(ref ds, "grade", sql);
             if (ret >= 0)
             {
                 dataGrade.DataSource = ds.Tables["grade"];
+                dataGrade.Columns[0].Visible = false;
                 setValue();
             }
             else

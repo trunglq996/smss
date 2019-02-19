@@ -57,12 +57,12 @@ namespace smss.control
             }
             var row = dataClass.SelectedRows[0];
 
-            code = row.Cells["code"].Value.ToString();
-            name = row.Cells["name"].Value.ToString();
+            code = row.Cells[0].Value.ToString();
+            name = row.Cells[2].Value.ToString();
 
-            txtMa.Text = row.Cells["codeview"].Value.ToString();
-            txtName.Text = row.Cells["name"].Value.ToString();
-            txtNote.Text = row.Cells["note"].Value.ToString();
+            txtMa.Text = row.Cells[1].Value.ToString();
+            txtName.Text = row.Cells[2].Value.ToString();
+            txtNote.Text = row.Cells[3].Value.ToString();
         }
         public void loadData()
         {
@@ -72,11 +72,12 @@ namespace smss.control
                 return;
             }
             DataSet ds = new DataSet();
-            string sql = "select code,name,note,codeview from class where gradecode = '" + Grade.code + "'";
+            string sql = "select code,codeview N'Mã',name N'Tên',note N'Ghi chú' from class where gradecode = '" + Grade.code + "'";
             int ret = new Connection.Connection().GetDataByQuery(ref ds, "class", sql);
             if (ret >= 0)
             {
                 dataClass.DataSource = ds.Tables["class"];
+                dataClass.Columns[0].Visible = false;
                 setValue();
             }
             else
