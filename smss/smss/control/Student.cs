@@ -27,6 +27,11 @@ namespace smss.control
 
             Width = 900;
             Height = 390;
+
+        }
+
+        public void LoadData()
+        {
             DataSet ds = new DataSet();
             string sql = "select * from student";
             int ret = new Connection.Connection().GetDataByQuery(ref ds, "student", sql);

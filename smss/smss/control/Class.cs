@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using smss.model;
 
@@ -20,7 +14,7 @@ namespace smss.control
 
         public static string code;
         public static string name;
-        private string procName;
+        private string _procName;
         private void Class_Load(object sender, EventArgs e)
         {
             
@@ -46,10 +40,10 @@ namespace smss.control
             groupButton.Top = 325;
             groupUpdate.Text = "Cập nhật lớp học (" + Grade.name + ")";
             groupData.Text = "Danh mục lớp học (" + Grade.name + ")";
-            loadData();
+            LoadData();
         }
 
-        public void setValue()
+        public void SetValue()
         {
             if (dataClass.SelectedRows.Count == 0)
             {
@@ -64,7 +58,7 @@ namespace smss.control
             txtName.Text = row.Cells[2].Value.ToString();
             txtNote.Text = row.Cells[3].Value.ToString();
         }
-        public void loadData()
+        public void LoadData()
         {
             if(String.IsNullOrEmpty(Grade.code))
             {
@@ -78,7 +72,7 @@ namespace smss.control
             {
                 dataClass.DataSource = ds.Tables["class"];
                 dataClass.Columns[0].Visible = false;
-                setValue();
+                SetValue();
             }
             else
             {
@@ -91,7 +85,7 @@ namespace smss.control
             txtMa.Text = "";
             txtName.Text = "";
             txtNote.Text = "";
-            procName = "InsertClass";
+            _procName = "InsertClass";
             groupButton.Enabled = false;
             groupUpdate.Enabled = true;
             groupData.Enabled = false;
@@ -99,7 +93,7 @@ namespace smss.control
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            procName = "UpdateClass";
+            _procName = "UpdateClass";
             groupButton.Enabled = false;
             groupUpdate.Enabled = true;
             groupData.Enabled = false;
@@ -117,7 +111,7 @@ namespace smss.control
                     if (ret >= 0)
                     {
                         MessageBox.Show("Success!", "Thông báo");
-                        loadData();
+                        LoadData();
                     }
                     else
                     {
@@ -139,12 +133,12 @@ namespace smss.control
                 MessageBox.Show("Chưa nhập mã!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (Save(procName) >= 0)
+            if (Save(_procName) >= 0)
             {
                 groupButton.Enabled = true;
                 groupUpdate.Enabled = false;
                 groupData.Enabled = true;
-                loadData();
+                LoadData();
             }
         }
         public int Save(string procName)
@@ -176,7 +170,7 @@ namespace smss.control
         }
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            setValue();
+            SetValue();
             groupButton.Enabled = true;
             groupUpdate.Enabled = false;
             groupData.Enabled = true;
@@ -184,7 +178,7 @@ namespace smss.control
 
         private void dataClass_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            setValue();
+            SetValue();
         }
     }
 }

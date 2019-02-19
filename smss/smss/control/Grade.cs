@@ -15,7 +15,7 @@ namespace smss.control
         }
         public static string code;
         public static string name;
-        private string procName;
+        private string _procName;
         private void ViewData_Load(object sender, EventArgs e)
         {
             txtYearIn.Text = "";
@@ -41,10 +41,10 @@ namespace smss.control
             groupButton.Height = 57;
             groupButton.Top = 325;
 
-            loadData();
+            LoadData();
         }
 
-        public void setValue()
+        public void SetValue()
         {
             if (dataGrade.SelectedRows.Count == 0)
             {
@@ -70,8 +70,8 @@ namespace smss.control
                 code = newcode,
                 codeview = txtMa.Text,
                 name = txtName.Text,
-                yearin = int.Parse(txtYearIn.Text.ToString()),
-                yearout = int.Parse(txtYearOut.Text.ToString()),
+                yearin = int.Parse(txtYearIn.Text),
+                yearout = int.Parse(txtYearOut.Text),
                 note = txtNote.Text
             };
             int ret = new Connection.Connection().Grade(obj, procName);
@@ -98,7 +98,7 @@ namespace smss.control
                     if (ret >= 0)
                     {
                         MessageBox.Show("Success!", "Thông báo");
-                        loadData();
+                        LoadData();
                     }
                     else
                     {
@@ -115,7 +115,7 @@ namespace smss.control
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            procName = "UpdateGrade";
+            _procName = "UpdateGrade";
             groupButton.Enabled = false;
             groupUpdate.Enabled = true;
             groupData.Enabled = false;
@@ -128,7 +128,7 @@ namespace smss.control
             txtYearIn.Text = "";
             txtYearOut.Text = "";
             txtNote.Text = "";
-            procName = "InsertGrade";
+            _procName = "InsertGrade";
             groupButton.Enabled = false;
             groupUpdate.Enabled = true;
             groupData.Enabled = false;
@@ -151,15 +151,15 @@ namespace smss.control
                 MessageBox.Show("Chưa nhập năm ra trường!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (Save(procName) >=0)
+            if (Save(_procName) >=0)
             {
                 groupButton.Enabled = true;
                 groupUpdate.Enabled = false;
                 groupData.Enabled = true;
-                loadData();
+                LoadData();
             }
         }
-        public void loadData()
+        public void LoadData()
         {
             DataSet ds = new DataSet();
             string sql = "select code, codeview N'Mã',name N'Tên',yearin N'Năm vào',yearout N'Năm ra',note N'Ghi chú' from grade";
@@ -168,7 +168,7 @@ namespace smss.control
             {
                 dataGrade.DataSource = ds.Tables["grade"];
                 dataGrade.Columns[0].Visible = false;
-                setValue();
+                SetValue();
             }
             else
             {
@@ -178,7 +178,7 @@ namespace smss.control
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            setValue();
+            SetValue();
             groupButton.Enabled = true;
             groupUpdate.Enabled = false;
             groupData.Enabled = true;
@@ -186,7 +186,7 @@ namespace smss.control
 
         private void dataGrade_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            setValue();
+            SetValue();
         }
     }
 }
