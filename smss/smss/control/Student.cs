@@ -34,6 +34,9 @@ namespace smss.control
             groupData.Height = 380;
             groupData.Width = 630;
 
+            groupData2.Height = 345;
+            groupData2.Width = 620;
+
             //groupButton.Width = 250;
             //groupButton.Height = 57;
             //groupButton.Top = 325;
@@ -53,6 +56,11 @@ namespace smss.control
             {
                 MessageBox.Show("Lỗi lấy dữ liệu sinh viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
