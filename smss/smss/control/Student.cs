@@ -40,22 +40,29 @@ namespace smss.control
             //groupButton.Width = 250;
             //groupButton.Height = 57;
             //groupButton.Top = 325;
-
+            LoadData();
         }
 
         public void LoadData()
         {
             DataSet ds = new DataSet();
-            string sql = "select * from student";
+            string sql = "select code,photo,codeview N'Mã SV',name N'Tên SV',birthday N'Ngày sinh',note N'Ghi chú' from student";
             int ret = new Connection.Connection().GetDataByQuery(ref ds, "student", sql);
             if (ret >= 0)
             {
                 dataStudent.DataSource = ds.Tables["student"];
+                dataStudent.Columns[0].Visible = false;
+                dataStudent.Columns[1].Visible = false;
+                SetValue();
             }
             else
             {
                 MessageBox.Show("Lỗi lấy dữ liệu sinh viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
+        }
+        public void SetValue()
+        {
+
         }
 
         private void btnNew_Click(object sender, EventArgs e)
