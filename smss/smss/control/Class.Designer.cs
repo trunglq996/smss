@@ -56,10 +56,11 @@
             // 
             this.dataClass.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataClass.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataClass.Location = new System.Drawing.Point(3, 22);
+            this.dataClass.Location = new System.Drawing.Point(2, 15);
+            this.dataClass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataClass.Name = "dataClass";
             this.dataClass.RowTemplate.Height = 28;
-            this.dataClass.Size = new System.Drawing.Size(557, 234);
+            this.dataClass.Size = new System.Drawing.Size(371, 151);
             this.dataClass.TabIndex = 0;
             this.dataClass.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataClass_CellClick);
             // 
@@ -69,9 +70,11 @@
             this.groupButton.Controls.Add(this.btnEdit);
             this.groupButton.Controls.Add(this.btnNew);
             this.groupButton.Controls.Add(this.btnDelete);
-            this.groupButton.Location = new System.Drawing.Point(3, 506);
+            this.groupButton.Location = new System.Drawing.Point(2, 329);
+            this.groupButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupButton.Name = "groupButton";
-            this.groupButton.Size = new System.Drawing.Size(337, 100);
+            this.groupButton.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupButton.Size = new System.Drawing.Size(225, 65);
             this.groupButton.TabIndex = 6;
             this.groupButton.TabStop = false;
             this.groupButton.Text = "Thêm/Sửa/Xóa";
@@ -79,9 +82,10 @@
             // btnEdit
             // 
             this.btnEdit.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnEdit.Location = new System.Drawing.Point(152, 25);
+            this.btnEdit.Location = new System.Drawing.Point(101, 16);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(79, 42);
+            this.btnEdit.Size = new System.Drawing.Size(53, 27);
             this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "Sửa";
             this.btnEdit.UseVisualStyleBackColor = false;
@@ -90,9 +94,10 @@
             // btnNew
             // 
             this.btnNew.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnNew.Location = new System.Drawing.Point(50, 25);
+            this.btnNew.Location = new System.Drawing.Point(33, 16);
+            this.btnNew.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(79, 42);
+            this.btnNew.Size = new System.Drawing.Size(53, 27);
             this.btnNew.TabIndex = 1;
             this.btnNew.Text = "Thêm";
             this.btnNew.UseVisualStyleBackColor = false;
@@ -101,9 +106,10 @@
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnDelete.Location = new System.Drawing.Point(253, 25);
+            this.btnDelete.Location = new System.Drawing.Point(169, 16);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(79, 42);
+            this.btnDelete.Size = new System.Drawing.Size(53, 27);
             this.btnDelete.TabIndex = 0;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -117,9 +123,11 @@
             this.groupUpdate.Controls.Add(this.groupBox5);
             this.groupUpdate.Controls.Add(this.groupBox2);
             this.groupUpdate.Controls.Add(this.groupBox1);
-            this.groupUpdate.Location = new System.Drawing.Point(3, 3);
+            this.groupUpdate.Location = new System.Drawing.Point(2, 2);
+            this.groupUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupUpdate.Name = "groupUpdate";
-            this.groupUpdate.Size = new System.Drawing.Size(337, 497);
+            this.groupUpdate.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupUpdate.Size = new System.Drawing.Size(225, 323);
             this.groupUpdate.TabIndex = 5;
             this.groupUpdate.TabStop = false;
             this.groupUpdate.Text = "Cập nhật lớp học";
@@ -127,9 +135,10 @@
             // btnHuy
             // 
             this.btnHuy.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnHuy.Location = new System.Drawing.Point(237, 303);
+            this.btnHuy.Location = new System.Drawing.Point(158, 197);
+            this.btnHuy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(89, 31);
+            this.btnHuy.Size = new System.Drawing.Size(59, 20);
             this.btnHuy.TabIndex = 5;
             this.btnHuy.Text = "Hủy bỏ";
             this.btnHuy.UseVisualStyleBackColor = false;
@@ -138,9 +147,10 @@
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnSave.Location = new System.Drawing.Point(142, 303);
+            this.btnSave.Location = new System.Drawing.Point(95, 197);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(89, 31);
+            this.btnSave.Size = new System.Drawing.Size(59, 20);
             this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -150,78 +160,89 @@
             // 
             this.groupBox5.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.groupBox5.Controls.Add(this.txtNote);
-            this.groupBox5.Location = new System.Drawing.Point(45, 178);
+            this.groupBox5.Location = new System.Drawing.Point(30, 116);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(287, 119);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox5.Size = new System.Drawing.Size(191, 77);
             this.groupBox5.TabIndex = 3;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Ghi chú";
             // 
             // txtNote
             // 
-            this.txtNote.Location = new System.Drawing.Point(6, 25);
+            this.txtNote.Location = new System.Drawing.Point(4, 16);
+            this.txtNote.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNote.Multiline = true;
             this.txtNote.Name = "txtNote";
-            this.txtNote.Size = new System.Drawing.Size(275, 88);
+            this.txtNote.Size = new System.Drawing.Size(185, 59);
             this.txtNote.TabIndex = 0;
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.groupBox2.Controls.Add(this.txtName);
-            this.groupBox2.Location = new System.Drawing.Point(44, 109);
+            this.groupBox2.Location = new System.Drawing.Point(29, 71);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(287, 63);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Size = new System.Drawing.Size(191, 41);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tên:";
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(6, 25);
+            this.txtName.Location = new System.Drawing.Point(4, 16);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(275, 26);
+            this.txtName.Size = new System.Drawing.Size(185, 20);
             this.txtName.TabIndex = 0;
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.groupBox1.Controls.Add(this.txtMa);
-            this.groupBox1.Location = new System.Drawing.Point(44, 40);
+            this.groupBox1.Location = new System.Drawing.Point(29, 26);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(287, 63);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(191, 41);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Mã:";
             // 
             // txtMa
             // 
-            this.txtMa.Location = new System.Drawing.Point(6, 25);
+            this.txtMa.Location = new System.Drawing.Point(4, 16);
+            this.txtMa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtMa.Name = "txtMa";
-            this.txtMa.Size = new System.Drawing.Size(275, 26);
+            this.txtMa.Size = new System.Drawing.Size(185, 20);
             this.txtMa.TabIndex = 0;
             // 
             // groupData
             // 
             this.groupData.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.groupData.Controls.Add(this.dataClass);
-            this.groupData.Location = new System.Drawing.Point(346, 3);
+            this.groupData.Location = new System.Drawing.Point(231, 2);
+            this.groupData.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupData.Name = "groupData";
-            this.groupData.Size = new System.Drawing.Size(563, 259);
+            this.groupData.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupData.Size = new System.Drawing.Size(375, 168);
             this.groupData.TabIndex = 4;
             this.groupData.TabStop = false;
             this.groupData.Text = "Danh mục lớp học";
             // 
             // Class
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupButton);
             this.Controls.Add(this.groupUpdate);
             this.Controls.Add(this.groupData);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "Class";
-            this.Size = new System.Drawing.Size(1023, 630);
+            this.Size = new System.Drawing.Size(682, 409);
             this.Load += new System.EventHandler(this.Class_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataClass)).EndInit();
             this.groupButton.ResumeLayout(false);
