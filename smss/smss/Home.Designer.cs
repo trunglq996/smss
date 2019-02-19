@@ -32,13 +32,12 @@
             // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(386, 207);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ClientSize = new System.Drawing.Size(579, 318);
             this.Name = "Home";
-            this.Text = "Home";
+            this.Text = "Phầm mềm hỗ trợ quản lý sinh viên";
             this.Load += new System.EventHandler(this.Home_Load);
             this.ResumeLayout(false);
 

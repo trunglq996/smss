@@ -98,7 +98,8 @@ namespace smss
         private void loginControl_LoginEvent(string staffcode, string name)
         {
             // Đã đăng nhập thành công
-
+            Width = 905;
+            Height = 500;
             Controls.Remove(_wc);
             Controls.Add(_menu);
             Controls.Add(_grade); // đăng nhập xong chuyển vào trang khóa học
@@ -111,10 +112,10 @@ namespace smss
             // bắt các sự kiện từ các userControl con
             _wc.LoginEvent += loginControl_LoginEvent;// click đăng nhập
             _menu.Change += ChangeTab; // click chuyển tab
-            Width = 905;
-            Height = 500;
+            Width = 410;
+            Height = 250;
             Controls.Add(_wc);
-            _wc.Location = new Point(250, 130);
+            _wc.Location = new Point(0, 0);
         }
         public void Remove()
         {
