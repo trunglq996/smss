@@ -47,10 +47,10 @@ namespace smss.control
             //groupButton.Top = 325;
             txtGrade.Text = "Khóa: " + Grade.name;
             txtClass.Text = "Lớp: " + Class.name;
-            txtGrade.Width = 130;
-            txtClass.Width = 130;
-            txtGrade.Left = 365;
-            txtClass.Left = 495;
+            txtGrade.Width = 150;
+            txtClass.Width = 150;
+            txtGrade.Left = 345;
+            txtClass.Left = 475;
 
             pictureBox1.Load(urlUser);
             LoadData();
@@ -87,8 +87,8 @@ namespace smss.control
             var row = dataStudent.SelectedRows[0];
             // lb
             code = row.Cells[0].Value.ToString();
-            lbCodeView.Text = row.Cells[2].Value.ToString();
-            lbName.Text = row.Cells[3].Value.ToString();
+            lbCodeView.Text = "Mã SV: " + row.Cells[2].Value.ToString();
+            lbName.Text = "Tên SV: " + row.Cells[3].Value.ToString();
             if(!String.IsNullOrEmpty(row.Cells[1].Value.ToString()))
                 pictureBox1.Load(row.Cells[1].Value.ToString());
             else
