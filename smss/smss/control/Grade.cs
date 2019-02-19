@@ -41,7 +41,6 @@ namespace smss.control
             groupButton.Top = 325;
 
             loadData();
-            setValue();
         }
 
         public void setValue()
@@ -162,6 +161,7 @@ namespace smss.control
             if (ret >= 0)
             {
                 dataGrade.DataSource = ds.Tables["grade"];
+                setValue();
             }
             else
             {

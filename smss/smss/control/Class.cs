@@ -47,7 +47,6 @@ namespace smss.control
             groupUpdate.Text = "Cập nhật lớp học (" + Grade.name + ")";
             groupData.Text = "Danh mục lớp học (" + Grade.name + ")";
             loadData();
-            setValue();
         }
 
         public void setValue()
@@ -78,6 +77,7 @@ namespace smss.control
             if (ret >= 0)
             {
                 dataClass.DataSource = ds.Tables["class"];
+                setValue();
             }
             else
             {
