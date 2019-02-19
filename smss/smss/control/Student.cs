@@ -27,11 +27,16 @@ namespace smss.control
 
             Width = 900;
             Height = 390;
-
+            groupUpdate.Width = 250;
+            groupUpdate.Height = 380;
 
             groupData.Left = 255;
             groupData.Height = 380;
             groupData.Width = 630;
+
+            //groupButton.Width = 250;
+            //groupButton.Height = 57;
+            //groupButton.Top = 325;
 
         }
 
