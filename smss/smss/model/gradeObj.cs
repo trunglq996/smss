@@ -13,5 +13,6 @@ namespace smss.model
         public int yearin { get; set; }
         public int yearout { get; set; }
         public string note { get; set; }
+        public string codeview { get; set; }
     }
 }

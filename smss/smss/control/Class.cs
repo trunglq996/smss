@@ -73,7 +73,7 @@ namespace smss.control
                 return;
             }
             DataSet ds = new DataSet();
-            string sql = "select code,name,note from class where gradecode = '" + Grade.code + "'";
+            string sql = "select code,name,note,codeview from class where gradecode = '" + Grade.code + "'";
             int ret = new Connection.Connection().GetDataByQuery(ref ds, "class", sql);
             if (ret >= 0)
             {
