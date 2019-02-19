@@ -58,7 +58,7 @@ namespace smss.control
         public void LoadData()
         {
             DataSet ds = new DataSet();
-            string sql = "select code,photo,codeview N'Mã SV',name N'Tên SV',birthday N'Ngày sinh',note N'Ghi chú' from student";
+            string sql = "select code,photo,codeview N'Mã SV',name N'Tên SV',birthday N'Ngày sinh',note N'Ghi chú' from student where gradecode = '" + Grade.code + "' and classcode = '" + Class.code + "'";
             int ret = new Connection.Connection().GetDataByQuery(ref ds, "student", sql);
             if (ret >= 0)
             {
