@@ -43,32 +43,36 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(176, 42);
+            this.label1.Location = new System.Drawing.Point(117, 27);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(256, 25);
+            this.label1.Size = new System.Drawing.Size(186, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "ĐĂNG NHẬP HỆ THỐNG";
             // 
             // txtTK
             // 
-            this.txtTK.Location = new System.Drawing.Point(204, 102);
+            this.txtTK.Location = new System.Drawing.Point(136, 66);
+            this.txtTK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTK.Name = "txtTK";
-            this.txtTK.Size = new System.Drawing.Size(281, 26);
+            this.txtTK.Size = new System.Drawing.Size(189, 20);
             this.txtTK.TabIndex = 1;
             // 
             // txtMK
             // 
-            this.txtMK.Location = new System.Drawing.Point(204, 159);
+            this.txtMK.Location = new System.Drawing.Point(136, 103);
+            this.txtMK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtMK.Name = "txtMK";
             this.txtMK.PasswordChar = '*';
-            this.txtMK.Size = new System.Drawing.Size(281, 26);
+            this.txtMK.Size = new System.Drawing.Size(189, 20);
             this.txtMK.TabIndex = 2;
             // 
             // btnDN
             // 
-            this.btnDN.Location = new System.Drawing.Point(249, 220);
+            this.btnDN.Location = new System.Drawing.Point(166, 143);
+            this.btnDN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDN.Name = "btnDN";
-            this.btnDN.Size = new System.Drawing.Size(118, 43);
+            this.btnDN.Size = new System.Drawing.Size(79, 28);
             this.btnDN.TabIndex = 3;
             this.btnDN.Text = "Đăng nhập";
             this.btnDN.UseVisualStyleBackColor = true;
@@ -77,18 +81,20 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(114, 105);
+            this.label2.Location = new System.Drawing.Point(76, 68);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 20);
+            this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Tài khoản: ";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(115, 162);
+            this.label3.Location = new System.Drawing.Point(77, 105);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 20);
+            this.label3.Size = new System.Drawing.Size(58, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "Mật khẩu: ";
             // 
@@ -98,7 +104,7 @@
             // 
             // WelcomeHome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Controls.Add(this.label3);
@@ -108,8 +114,9 @@
             this.Controls.Add(this.txtTK);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "WelcomeHome";
-            this.Size = new System.Drawing.Size(602, 336);
+            this.Size = new System.Drawing.Size(401, 218);
             this.Load += new System.EventHandler(this.WelcomeHome_Load);
             ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
             this.ResumeLayout(false);
