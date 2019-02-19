@@ -60,8 +60,13 @@ namespace smss.control
         }
         public int Save(string procName)
         {
+            string newcode = code;
+            if (procName == "InsertGrade")
+            {
+                newcode = new Connection.Connection().GenNextCode("grade");
+            }
             gradeObj obj = new gradeObj() {
-                code = code,
+                code = newcode,
                 codeview = txtMa.Text,
                 name = txtName.Text,
                 yearin = int.Parse(txtYearIn.Text.ToString()),

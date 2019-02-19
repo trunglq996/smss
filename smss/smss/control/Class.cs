@@ -148,9 +148,14 @@ namespace smss.control
         }
         public int Save(string procName)
         {
+            string newcode = code;
+            if (procName == "InsertClass")
+            {
+                newcode = new Connection.Connection().GenNextCode("class");
+            }
             classObj obj = new classObj()
             {
-                code = code,
+                code = newcode,
                 codeview = txtMa.Text,
                 name = txtName.Text,
                 staffcode = Menu.StaffCode,

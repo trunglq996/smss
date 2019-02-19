@@ -77,6 +77,25 @@ namespace smss.Connection
             _connection.Close();
             return ret;
         }
+        public string GenNextCode(string tableName)
+        {
+            DateTime date = DateTime.Now;
+            string code = date.Year.ToString().Substring(2) + date.Month.ToString() + date.Day.ToString();
+            string sql = "select MAX(CONVERT(float,code)) from " + tableName + " where code like '" + code + "%'";
+            while(code.Length < 10)
+            {
+                code += "0";
+            }
+            SqlCommand cmd = new SqlCommand(sql, _connection);
+            SqlDataReader Data = cmd.ExecuteReader();
+            while (Data.Read())
+            {
+                if (String.IsNullOrEmpty(Data[0].ToString()))
+                    break;
+                code = (long.Parse(Data[0].ToString()) + 1).ToString();
+            }
+            return code;
+        }
         public int GetDataByQuery(ref DataSet ds, string tableName, string sql)
         {
             ds.Tables.Add(tableName);
