@@ -22,7 +22,6 @@ namespace smss.Connection
             }
             catch (Exception)
             {
-                _connection.Close();
                 Status = -1000;
             }
         }
