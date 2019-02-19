@@ -30,17 +30,17 @@
         {
             this.dataStudent = new System.Windows.Forms.DataGridView();
             this.groupUpdate = new System.Windows.Forms.GroupBox();
+            this.lbName = new System.Windows.Forms.Label();
+            this.lbCodeView = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupData = new System.Windows.Forms.GroupBox();
+            this.txtClass = new System.Windows.Forms.TextBox();
+            this.txtGrade = new System.Windows.Forms.TextBox();
             this.groupData2 = new System.Windows.Forms.GroupBox();
             this.btnNew = new System.Windows.Forms.Button();
-            this.txtGrade = new System.Windows.Forms.TextBox();
-            this.txtClass = new System.Windows.Forms.TextBox();
-            this.lbCodeView = new System.Windows.Forms.Label();
-            this.lbName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataStudent)).BeginInit();
             this.groupUpdate.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -75,6 +75,28 @@
             this.groupUpdate.TabStop = false;
             this.groupUpdate.Text = "Cập nhật sinh viên";
             // 
+            // lbName
+            // 
+            this.lbName.AutoSize = true;
+            this.lbName.Font = new System.Drawing.Font("Cambria", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbName.Location = new System.Drawing.Point(114, 362);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(147, 26);
+            this.lbName.TabIndex = 13;
+            this.lbName.Text = "Tên sinh viên";
+            this.lbName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbCodeView
+            // 
+            this.lbCodeView.AutoSize = true;
+            this.lbCodeView.Font = new System.Drawing.Font("Cambria", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCodeView.Location = new System.Drawing.Point(114, 336);
+            this.lbCodeView.Name = "lbCodeView";
+            this.lbCodeView.Size = new System.Drawing.Size(140, 26);
+            this.lbCodeView.TabIndex = 12;
+            this.lbCodeView.Text = "Mã sinh viên";
+            this.lbCodeView.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // btnEdit
             // 
             this.btnEdit.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -85,6 +107,7 @@
             this.btnEdit.TabIndex = 10;
             this.btnEdit.Text = "Sửa";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
@@ -131,6 +154,22 @@
             this.groupData.TabIndex = 4;
             this.groupData.TabStop = false;
             // 
+            // txtClass
+            // 
+            this.txtClass.Enabled = false;
+            this.txtClass.Location = new System.Drawing.Point(413, 18);
+            this.txtClass.Name = "txtClass";
+            this.txtClass.Size = new System.Drawing.Size(197, 26);
+            this.txtClass.TabIndex = 10;
+            // 
+            // txtGrade
+            // 
+            this.txtGrade.Enabled = false;
+            this.txtGrade.Location = new System.Drawing.Point(210, 18);
+            this.txtGrade.Name = "txtGrade";
+            this.txtGrade.Size = new System.Drawing.Size(197, 26);
+            this.txtGrade.TabIndex = 6;
+            // 
             // groupData2
             // 
             this.groupData2.Controls.Add(this.dataStudent);
@@ -154,44 +193,6 @@
             this.btnNew.Text = "Thêm mới";
             this.btnNew.UseVisualStyleBackColor = false;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
-            // 
-            // txtGrade
-            // 
-            this.txtGrade.Enabled = false;
-            this.txtGrade.Location = new System.Drawing.Point(210, 18);
-            this.txtGrade.Name = "txtGrade";
-            this.txtGrade.Size = new System.Drawing.Size(197, 26);
-            this.txtGrade.TabIndex = 6;
-            // 
-            // txtClass
-            // 
-            this.txtClass.Enabled = false;
-            this.txtClass.Location = new System.Drawing.Point(413, 18);
-            this.txtClass.Name = "txtClass";
-            this.txtClass.Size = new System.Drawing.Size(197, 26);
-            this.txtClass.TabIndex = 10;
-            // 
-            // lbCodeView
-            // 
-            this.lbCodeView.AutoSize = true;
-            this.lbCodeView.Font = new System.Drawing.Font("Cambria", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCodeView.Location = new System.Drawing.Point(114, 336);
-            this.lbCodeView.Name = "lbCodeView";
-            this.lbCodeView.Size = new System.Drawing.Size(140, 26);
-            this.lbCodeView.TabIndex = 12;
-            this.lbCodeView.Text = "Mã sinh viên";
-            this.lbCodeView.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbName
-            // 
-            this.lbName.AutoSize = true;
-            this.lbName.Font = new System.Drawing.Font("Cambria", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.Location = new System.Drawing.Point(114, 362);
-            this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(147, 26);
-            this.lbName.TabIndex = 13;
-            this.lbName.Text = "Tên sinh viên";
-            this.lbName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Student
             // 

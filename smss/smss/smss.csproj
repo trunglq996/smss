@@ -65,6 +65,12 @@
     <Compile Include="control\Grade.Designer.cs">
       <DependentUpon>Grade.cs</DependentUpon>
     </Compile>
+    <Compile Include="control\SqlStudent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="control\SqlStudent.Designer.cs">
+      <DependentUpon>SqlStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="control\Student.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -97,6 +103,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="control\Grade.resx">
       <DependentUpon>Grade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="control\SqlStudent.resx">
+      <DependentUpon>SqlStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="control\Student.resx">
       <DependentUpon>Student.cs</DependentUpon>

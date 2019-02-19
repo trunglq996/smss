@@ -17,7 +17,9 @@ namespace smss.control
         {
             InitializeComponent();
         }
-        private studentObj obj = null;
+        public delegate void UpdateStudent(string code);
+        public event UpdateStudent update;
+        private string code;
         private void Student_Load(object sender, EventArgs e)
         {
             dataStudent.ReadOnly = true;
@@ -48,6 +50,7 @@ namespace smss.control
             txtClass.Width = 130;
             txtGrade.Left = 365;
             txtClass.Left = 495;
+
             pictureBox1.Load(@"C:\Users\quang\Documents\GitHub\smss\smss\smss\image\user.png");
             LoadData();
         }
@@ -73,36 +76,36 @@ namespace smss.control
         {
             if (dataStudent.SelectedRows.Count == 0)
             {
-                obj = null;
+                code = "";
+                btnEdit.Visible = false;
+                btnDelete.Visible = false;
                // groupUpdate.Visible = false;
                 return;
             }
             var row = dataStudent.SelectedRows[0];
-            obj = new studentObj()
-            {
-                code = row.Cells[0].Value.ToString(),
-                photo = row.Cells[1].Value.ToString(),
-                codeview = row.Cells[2].Value.ToString(),
-                name = row.Cells[3].Value.ToString(),
-                birthday = DateTime.Now,
-                note = row.Cells[5].Value.ToString(),
-                gradecode = Grade.code,
-                classcode = Class.code
-            };
             // lb
-            lbCodeView.Text = obj.codeview;
-            lbName.Text = obj.name;
+            code = row.Cells[0].Value.ToString();
+            lbCodeView.Text = row.Cells[2].Value.ToString();
+            lbName.Text = row.Cells[3].Value.ToString();
             pictureBox1.Load(@"C:\Users\quang\Documents\GitHub\smss\smss\smss\image\1.jpg");
+
+            btnEdit.Visible = true;
+            btnDelete.Visible = true;
         }
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-
+            update("");
         }
 
         private void dataStudent_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            SetValue();
+        }
 
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            update(code);
         }
     }
 }

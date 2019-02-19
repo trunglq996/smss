@@ -17,6 +17,7 @@ namespace smss
         control.Grade _grade = new control.Grade();
         control.Class _class; // khi nào dùng sẽ khai báo
         control.Student _student; // khi nào dùng sẽ khai báo
+        control.SqlStudent _insertStudent;
 
         public Home()
         {
@@ -40,8 +41,26 @@ namespace smss
             else if(tabID == 3)
             {
                 _student = new control.Student(); // tạo lại userControl mới để chạy lại loadData theo classcode
+                _student.update += UpdateStudent; 
                 Controls.Add(_student);
                 _student.Location = new Point(0, 67);
+            }
+        }
+        private void UpdateStudent(string code)
+        {
+            if (!String.IsNullOrEmpty(code))
+            {
+                // thực hiện mở form cập nhật
+            }
+            else
+            {
+                _insertStudent = new control.SqlStudent();
+                Width = _insertStudent.Width + 15;
+                Height = _insertStudent.Height + 35;
+                Controls.Remove(_menu);
+                Controls.Remove(_student);
+                Controls.Add(_insertStudent);
+                // thực hiện mở form  thêm mới
             }
         }
         private void loginControl_LoginEvent(string staffcode, string name)
