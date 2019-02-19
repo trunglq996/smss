@@ -48,6 +48,7 @@ namespace smss.control
         {
             if (dataGrade.SelectedRows.Count == 0)
             {
+                code = name = "";
                 return;
             }
             var row = dataGrade.SelectedRows[0];

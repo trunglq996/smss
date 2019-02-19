@@ -39,12 +39,19 @@ namespace smss.control
         private void btnClass_Click(object sender, EventArgs e)
         {
             btnStudent.Enabled = true;
-            Change(2); //gọi đến sự kiện ChangeTab ở Home.cs
+            if (!String.IsNullOrEmpty(Grade.code))
+                Change(2); //gọi đến sự kiện ChangeTab ở Home.cs
+            else
+                MessageBox.Show("Chưa chọn khóa học nào!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
         }
 
         private void btnStudent_Click(object sender, EventArgs e)
         {
-            Change(3); //gọi đến sự kiện ChangeTab ở Home.cs
+            if(!string.IsNullOrEmpty(Class.code))
+                Change(3); //gọi đến sự kiện ChangeTab ở Home.cs
+            else
+                MessageBox.Show("Chưa chọn lớp học nào!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }
