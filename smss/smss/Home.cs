@@ -60,7 +60,7 @@ namespace smss
             // bắt các sự kiện từ các userControl con
             _wc.LoginEvent += loginControl_LoginEvent;// click đăng nhập
             _menu.Change += ChangeTab; // click chuyển tab
-            Width = 900;
+            Width = 905;
             Height = 500;
             Controls.Add(_wc);
             _wc.Location = new Point(250, 130);
