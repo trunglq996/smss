@@ -61,7 +61,7 @@ namespace smss.control
             code = row.Cells["code"].Value.ToString();
             name = row.Cells["name"].Value.ToString();
 
-            txtMa.Text = row.Cells["code"].Value.ToString();
+            txtMa.Text = row.Cells["codeview"].Value.ToString();
             txtName.Text = row.Cells["name"].Value.ToString();
             txtNote.Text = row.Cells["note"].Value.ToString();
         }
@@ -150,7 +150,8 @@ namespace smss.control
         {
             classObj obj = new classObj()
             {
-                code = txtMa.Text,
+                code = code,
+                codeview = txtMa.Text,
                 name = txtName.Text,
                 staffcode = Menu.StaffCode,
                 gradecode = Grade.code,

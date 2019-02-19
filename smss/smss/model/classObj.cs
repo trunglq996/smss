@@ -14,5 +14,6 @@ namespace smss.model
         public string gradecode { get; set; }
         public string note { get; set; }
         public gradeObj _gradecode { get; set; }
+        public string codeview { get; set; }
     }
 }

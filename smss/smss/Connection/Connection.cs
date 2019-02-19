@@ -14,7 +14,7 @@ namespace smss.Connection
         public Connection()
         {
             _conStr =
-                @"Data Source=Trung;Initial Catalog=smss;integrated security=true; Max Pool Size=1024; ";
+                @"Data Source=DESKTOP-NGO2712\SQLEXPRESS;Initial Catalog=smss;integrated security=true; Max Pool Size=1024; ";
             try
             {
                 _connection = new SqlConnection(_conStr);
@@ -108,6 +108,7 @@ namespace smss.Connection
                 {
                     SqlCommand cmd = new SqlCommand(procName, _connection) { CommandType = CommandType.StoredProcedure };
                     cmd.Parameters.AddWithValue("code", obj.code);
+                    cmd.Parameters.AddWithValue("codeview", obj.codeview);
                     cmd.Parameters.AddWithValue("name", obj.name);
                     cmd.Parameters.AddWithValue("yearin", obj.yearin);
                     cmd.Parameters.AddWithValue("yearout", obj.yearout);
@@ -133,6 +134,7 @@ namespace smss.Connection
                 {
                     SqlCommand cmd = new SqlCommand(procName, _connection) { CommandType = CommandType.StoredProcedure };
                     cmd.Parameters.AddWithValue("code", obj.code);
+                    cmd.Parameters.AddWithValue("codeview", obj.codeview);
                     cmd.Parameters.AddWithValue("name", obj.name);
                     cmd.Parameters.AddWithValue("staffcode", obj.staffcode);
                     cmd.Parameters.AddWithValue("gradecode", obj.gradecode);

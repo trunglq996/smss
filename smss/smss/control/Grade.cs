@@ -53,7 +53,7 @@ namespace smss.control
             var row = dataGrade.SelectedRows[0];
             code = row.Cells["code"].Value.ToString();
             name = row.Cells["name"].Value.ToString();
-            txtMa.Text = row.Cells["code"].Value.ToString();
+            txtMa.Text = row.Cells["codeview"].Value.ToString();
             txtName.Text = row.Cells["name"].Value.ToString();
             txtYearIn.Text = row.Cells["yearin"].Value.ToString();
             txtYearOut.Text = row.Cells["yearout"].Value.ToString();
@@ -62,7 +62,8 @@ namespace smss.control
         public int Save(string procName)
         {
             gradeObj obj = new gradeObj() {
-                code = txtMa.Text,
+                code = code,
+                codeview = txtMa.Text,
                 name = txtName.Text,
                 yearin = int.Parse(txtYearIn.Text.ToString()),
                 yearout = int.Parse(txtYearOut.Text.ToString()),
