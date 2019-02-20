@@ -13,8 +13,7 @@ namespace smss.Connection
 
         public Connection()
         {
-            _conStr =
-                @"Data Source=Trung;Initial Catalog=smss;integrated security=true; Max Pool Size=1024; ";
+            _conStr = Home.StrConnection;
             try
             {
                 _connection = new SqlConnection(_conStr);
