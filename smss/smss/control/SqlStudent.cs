@@ -19,7 +19,6 @@ namespace smss.control
 
         public event ReturnHome click;
         private string url = "";
-        private string urlUser = @"C:\Users\quang\OneDrive\Tài liệu\GitHub\smss\smss\smss\image\user.png";
         private string code;
 
         private void SqlStudent_Load(object sender, EventArgs e)
@@ -33,20 +32,13 @@ namespace smss.control
                 if (ret >= 0 && ds.Tables["student"].Rows.Count > 0)
                 {
                     url = ds.Tables["student"].Rows[0]["photo"].ToString();
-                    if (!String.IsNullOrEmpty(url))
+                    try
                     {
-                        try
-                        {
-                            pictureBox1.Load(url);
-                        }
-                        catch (Exception)
-                        {
-                            pictureBox1.Load(urlUser);
-                        }
+                        pictureBox1.Load(url);
                     }
-                    else
+                    catch (Exception)
                     {
-                        pictureBox1.Load(urlUser);
+                        pictureBox1.Load(Home.UrlUser);
                     }
                     txtName.Text = ds.Tables["student"].Rows[0]["name"].ToString();
                     txtCodeview.Text = ds.Tables["student"].Rows[0]["codeview"].ToString();

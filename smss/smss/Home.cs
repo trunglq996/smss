@@ -18,6 +18,7 @@ namespace smss
         control.Class _class; // khi nào dùng sẽ khai báo
         control.Student _student; // khi nào dùng sẽ khai báo
         control.SqlStudent _insertStudent;
+        public static readonly string UrlUser = @"C:\Users\quang\OneDrive\Tài liệu\GitHub\smss\smss\smss\image\user.png";
 
         public Home()
         {
