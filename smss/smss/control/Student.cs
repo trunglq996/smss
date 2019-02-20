@@ -17,10 +17,13 @@ namespace smss.control
         {
             InitializeComponent();
         }
+
         public delegate void UpdateStudent(string code);
+
         public event UpdateStudent update;
         private string code;
-        private string urlUser = @"C:\Users\quang\Documents\GitHub\smss\smss\smss\image\user.png";
+        private string urlUser = @"C:\Users\quang\OneDrive\Tài liệu\GitHub\smss\smss\smss\image\user.png";
+
         private void Student_Load(object sender, EventArgs e)
         {
             dataStudent.ReadOnly = true;
@@ -59,7 +62,9 @@ namespace smss.control
         public void LoadData()
         {
             DataSet ds = new DataSet();
-            string sql = "select code,photo,codeview N'Mã SV',name N'Tên SV',birthday N'Ngày sinh',note N'Ghi chú' from student where gradecode = '" + Grade.code + "' and classcode = '" + Class.code + "'";
+            string sql =
+                "select code,photo,codeview N'Mã SV',name N'Tên SV',birthday N'Ngày sinh',note N'Ghi chú' from student where gradecode = '" +
+                Grade.code + "' and classcode = '" + Class.code + "'";
             int ret = new Connection.Connection().GetDataByQuery(ref ds, "student", sql);
             if (ret >= 0)
             {
@@ -73,6 +78,7 @@ namespace smss.control
                 MessageBox.Show("Lỗi lấy dữ liệu sinh viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
+
         public void SetValue()
         {
             if (dataStudent.SelectedRows.Count == 0)
@@ -81,16 +87,26 @@ namespace smss.control
                 pictureBox1.Load(urlUser);
                 btnEdit.Visible = false;
                 btnDelete.Visible = false;
-               // groupUpdate.Visible = false;
+                // groupUpdate.Visible = false;
                 return;
             }
             var row = dataStudent.SelectedRows[0];
             // lb
             code = row.Cells[0].Value.ToString();
-            lbCodeView.Text = "Mã SV: " + row.Cells[2].Value.ToString();
-            lbName.Text = "Tên SV: " + row.Cells[3].Value.ToString();
-            if(!String.IsNullOrEmpty(row.Cells[1].Value.ToString()))
-                pictureBox1.Load(row.Cells[1].Value.ToString());
+            lbCodeView.Text = "Mã SV: " + row.Cells[2].Value;
+            lbName.Text = "Tên SV: " + row.Cells[3].Value;
+            if (!String.IsNullOrEmpty(row.Cells[1].Value.ToString()))
+            {
+                try
+                {
+                    pictureBox1.Load(row.Cells[1].Value.ToString());
+                }
+                catch (Exception)
+                {
+
+                    pictureBox1.Load(urlUser);
+                }
+            }
             else
             {
                 pictureBox1.Load(urlUser);

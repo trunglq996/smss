@@ -14,11 +14,14 @@ namespace smss.control
             InitializeComponent();
             code = Code;
         }
+
         public delegate void ReturnHome(bool kq);
+
         public event ReturnHome click;
         private string url = "";
-        private string urlUser = @"C:\Users\quang\Documents\GitHub\smss\smss\smss\image\user.png";
+        private string urlUser = @"C:\Users\quang\OneDrive\Tài liệu\GitHub\smss\smss\smss\image\user.png";
         private string code;
+
         private void SqlStudent_Load(object sender, EventArgs e)
         {
             label1.Text = Grade.name + " (" + Class.name + ")";
@@ -27,11 +30,20 @@ namespace smss.control
                 string sql = "select * from student where code = '" + code + "'";
                 DataSet ds = new DataSet();
                 int ret = new Connection.Connection().GetDataByQuery(ref ds, "student", sql);
-                if(ret >= 0 && ds.Tables["student"].Rows.Count > 0)
+                if (ret >= 0 && ds.Tables["student"].Rows.Count > 0)
                 {
                     url = ds.Tables["student"].Rows[0]["photo"].ToString();
-                    if(!String.IsNullOrEmpty(url))
-                        pictureBox1.Load(url);
+                    if (!String.IsNullOrEmpty(url))
+                    {
+                        try
+                        {
+                            pictureBox1.Load(url);
+                        }
+                        catch (Exception)
+                        {
+                            pictureBox1.Load(urlUser);
+                        }
+                    }
                     else
                     {
                         pictureBox1.Load(urlUser);
