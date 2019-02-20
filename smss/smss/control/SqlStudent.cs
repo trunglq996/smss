@@ -103,7 +103,7 @@ namespace smss.control
         {
             OpenFileDialog uploadFileSteam = new OpenFileDialog();
 
-            uploadFileSteam.InitialDirectory = "c:\\";
+            uploadFileSteam.InitialDirectory = Home.UrlFolder;
             uploadFileSteam.Filter = "Ảnh|*.jpg;*.png";
             uploadFileSteam.FilterIndex = 2;
 

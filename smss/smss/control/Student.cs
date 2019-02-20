@@ -51,8 +51,8 @@ namespace smss.control
             txtClass.Text = "Lớp: " + Class.name;
             txtGrade.Width = 150;
             txtClass.Width = 150;
-            txtGrade.Left = 345;
-            txtClass.Left = 475;
+            txtGrade.Left = 341;
+            txtClass.Left = 473;
 
             pictureBox1.Load(Home.UrlUser);
             LoadData();
