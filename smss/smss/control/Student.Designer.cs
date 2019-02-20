@@ -54,7 +54,7 @@
             this.dataStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataStudent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataStudent.Location = new System.Drawing.Point(3, 16);
-            this.dataStudent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataStudent.Margin = new System.Windows.Forms.Padding(2);
             this.dataStudent.Name = "dataStudent";
             this.dataStudent.RowTemplate.Height = 28;
             this.dataStudent.Size = new System.Drawing.Size(384, 120);
@@ -70,9 +70,9 @@
             this.groupUpdate.Controls.Add(this.btnDelete);
             this.groupUpdate.Controls.Add(this.groupBox1);
             this.groupUpdate.Location = new System.Drawing.Point(2, 2);
-            this.groupUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.groupUpdate.Name = "groupUpdate";
-            this.groupUpdate.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupUpdate.Padding = new System.Windows.Forms.Padding(2);
             this.groupUpdate.Size = new System.Drawing.Size(247, 379);
             this.groupUpdate.TabIndex = 5;
             this.groupUpdate.TabStop = false;
@@ -122,15 +122,16 @@
             this.btnDelete.TabIndex = 11;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Location = new System.Drawing.Point(48, 17);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(150, 200);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
@@ -153,9 +154,9 @@
             this.groupData.Controls.Add(this.groupData2);
             this.groupData.Controls.Add(this.btnNew);
             this.groupData.Location = new System.Drawing.Point(314, 2);
-            this.groupData.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupData.Margin = new System.Windows.Forms.Padding(2);
             this.groupData.Name = "groupData";
-            this.groupData.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupData.Padding = new System.Windows.Forms.Padding(2);
             this.groupData.Size = new System.Drawing.Size(563, 379);
             this.groupData.TabIndex = 4;
             this.groupData.TabStop = false;
@@ -165,7 +166,7 @@
             this.txtClass.BackColor = System.Drawing.Color.NavajoWhite;
             this.txtClass.Enabled = false;
             this.txtClass.Location = new System.Drawing.Point(275, 12);
-            this.txtClass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtClass.Margin = new System.Windows.Forms.Padding(2);
             this.txtClass.Name = "txtClass";
             this.txtClass.Size = new System.Drawing.Size(133, 20);
             this.txtClass.TabIndex = 10;
@@ -175,7 +176,7 @@
             this.txtGrade.BackColor = System.Drawing.Color.NavajoWhite;
             this.txtGrade.Enabled = false;
             this.txtGrade.Location = new System.Drawing.Point(140, 12);
-            this.txtGrade.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtGrade.Margin = new System.Windows.Forms.Padding(2);
             this.txtGrade.Name = "txtGrade";
             this.txtGrade.Size = new System.Drawing.Size(133, 20);
             this.txtGrade.TabIndex = 6;
