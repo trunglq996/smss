@@ -47,12 +47,12 @@ namespace smss.control
             //groupButton.Width = 250;
             //groupButton.Height = 57;
             //groupButton.Top = 325;
-            txtGrade.Text = "Khóa: " + Grade.name;
-            txtClass.Text = "Lớp: " + Class.name;
-            txtGrade.Width = 150;
-            txtClass.Width = 150;
-            txtGrade.Left = 341;
-            txtClass.Left = 473;
+            txtGrade.Text = Grade.name;
+            txtClass.Text = Class.name;
+            txtGrade.Width = 140;
+            txtClass.Width = 140;
+            txtGrade.Left = 340;
+            txtClass.Left = 485;
 
             pictureBox1.Load(Home.UrlUser);
             LoadData();
