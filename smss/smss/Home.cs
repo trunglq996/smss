@@ -21,9 +21,7 @@ namespace smss
         public static readonly string UrlFolder = @"C:\Users\dell\Documents\GitHub\smss\smss\smss\image";
         public static readonly string UrlUser = UrlFolder + "//user.png";
         public static readonly string StrConnection = @"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=smss;integrated security=true; Max Pool Size=1024; ";
-        /// <summary>
-        /// //
-        /// </summary>
+ 
         public Home()
         {
             InitializeComponent();
