@@ -40,7 +40,7 @@ namespace smss.control
             groupButton.Top = 325;
             groupUpdate.Text = "Cập nhật lớp học (" + Grade.name + ")";
             groupData.Text = "Danh mục lớp học (" + Grade.name + ")";
-            LoadData();
+            LoadData(code);
         }
 
         public void SetValue()
@@ -59,7 +59,7 @@ namespace smss.control
             txtName.Text = row.Cells[2].Value.ToString();
             txtNote.Text = row.Cells[3].Value.ToString();
         }
-        public void LoadData()
+        public void LoadData(string selectcode)
         {
             if(String.IsNullOrEmpty(Grade.code))
             {
@@ -73,6 +73,19 @@ namespace smss.control
             {
                 dataClass.DataSource = ds.Tables["class"];
                 dataClass.Columns[0].Visible = false;
+                if (!String.IsNullOrEmpty(selectcode))
+                {
+                    // chọn vào bản ghi mong muốn
+                    for (int i = 0; i < dataClass.RowCount; i++)
+                    {
+                        if (dataClass.Rows[i].Cells["code"].Value.ToString().Equals(selectcode))
+                        {
+                            dataClass.Rows[i].Selected = true;
+                            dataClass.CurrentCell = dataClass.Rows[i].Cells[1];
+                            break;
+                        }
+                    }
+                }
                 SetValue();
             }
             else
@@ -112,7 +125,7 @@ namespace smss.control
                     if (ret >= 0)
                     {
                         MessageBox.Show("Success!", "Thông báo");
-                        LoadData();
+                        LoadData("");
                     }
                     else
                     {
@@ -134,15 +147,9 @@ namespace smss.control
                 MessageBox.Show("Chưa nhập mã!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (Save(_procName) >= 0)
-            {
-                groupButton.Enabled = true;
-                groupUpdate.Enabled = false;
-                groupData.Enabled = true;
-                LoadData();
-            }
+            Save(_procName);
         }
-        public int Save(string procName)
+        public void Save(string procName)
         {
             string newcode = code;
             if (procName == "InsertClass")
@@ -162,12 +169,15 @@ namespace smss.control
             if (ret > 0)
             {
                 MessageBox.Show("Cập nhật thành công!", "Thông báo");
+                groupButton.Enabled = true;
+                groupUpdate.Enabled = false;
+                groupData.Enabled = true;
+                LoadData(newcode);
             }
             else
             {
                 MessageBox.Show("Đã có lỗi!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            return ret;
         }
         private void btnHuy_Click(object sender, EventArgs e)
         {

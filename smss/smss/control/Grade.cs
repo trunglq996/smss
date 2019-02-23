@@ -41,7 +41,7 @@ namespace smss.control
             groupButton.Height = 57;
             groupButton.Top = 325;
 
-            LoadData();
+            LoadData(code);
         }
 
         public void SetValue()
@@ -60,7 +60,7 @@ namespace smss.control
             txtYearOut.Text = row.Cells[4].Value.ToString();
             txtNote.Text = row.Cells[5].Value.ToString();
         }
-        public int Save(string procName)
+        public void Save(string procName)
         {
             string newcode = code;
             if (procName == "InsertGrade")
@@ -79,12 +79,15 @@ namespace smss.control
             if(ret > 0)
             {
                 MessageBox.Show("Cập nhật thành công!", "Thông báo");
+                groupButton.Enabled = true;
+                groupUpdate.Enabled = false;
+                groupData.Enabled = true;
+                LoadData(newcode);
             }
             else
             {
                 MessageBox.Show("Đã có lỗi!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            return ret;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -99,7 +102,7 @@ namespace smss.control
                     if (ret >= 0)
                     {
                         MessageBox.Show("Success!", "Thông báo");
-                        LoadData();
+                        LoadData("");
                     }
                     else
                     {
@@ -152,15 +155,9 @@ namespace smss.control
                 MessageBox.Show("Chưa nhập năm ra trường!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (Save(_procName) >=0)
-            {
-                groupButton.Enabled = true;
-                groupUpdate.Enabled = false;
-                groupData.Enabled = true;
-                LoadData();
-            }
+            Save(_procName);
         }
-        public void LoadData()
+        public void LoadData(string selectcode)
         {
             DataSet ds = new DataSet();
             string sql = "select code, codeview N'Mã',name N'Tên',yearin N'Năm vào',yearout N'Năm ra',note N'Ghi chú' from grade";
@@ -169,6 +166,19 @@ namespace smss.control
             {
                 dataGrade.DataSource = ds.Tables["grade"];
                 dataGrade.Columns[0].Visible = false;
+                if (!String.IsNullOrEmpty(selectcode))
+                {
+                    // chọn vào bản ghi mong muốn
+                    for (int i = 0; i < dataGrade.RowCount; i++)
+                    {
+                        if (dataGrade.Rows[i].Cells["code"].Value.ToString().Equals(selectcode))
+                        {
+                            dataGrade.Rows[i].Selected = true;
+                            dataGrade.CurrentCell = dataGrade.Rows[i].Cells[1];
+                            break;
+                        }
+                    }
+                }
                 SetValue();
             }
             else

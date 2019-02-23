@@ -85,6 +85,7 @@ namespace smss.control
                     gradecode = Grade.code,
                     classcode = Class.code
                 };
+                Student.code = obj.code;
                 ret = new Connection.Connection().Student(obj, "InsertStudent");
             }
             if(ret >= 0)

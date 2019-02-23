@@ -21,7 +21,7 @@ namespace smss.control
         public delegate void UpdateStudent(string code);
 
         public event UpdateStudent update;
-        private string code;
+        public static string code;
 
         private void Student_Load(object sender, EventArgs e)
         {
@@ -55,10 +55,10 @@ namespace smss.control
             txtClass.Left = 485;
 
             pictureBox1.Load(Home.UrlUser);
-            LoadData();
+            LoadData(code);
         }
 
-        public void LoadData()
+        public void LoadData(string selectcode)
         {
             DataSet ds = new DataSet();
             string sql =
@@ -70,6 +70,19 @@ namespace smss.control
                 dataStudent.DataSource = ds.Tables["student"];
                 dataStudent.Columns[0].Visible = false;
                 dataStudent.Columns[1].Visible = false;
+                if (!String.IsNullOrEmpty(selectcode))
+                {
+                    // chọn vào bản ghi mong muốn
+                    for (int i = 0; i < dataStudent.RowCount; i++)
+                    {
+                        if (dataStudent.Rows[i].Cells["code"].Value.ToString().Equals(selectcode))
+                        {
+                            dataStudent.Rows[i].Selected = true;
+                            dataStudent.CurrentCell = dataStudent.Rows[i].Cells[2];
+                            break;
+                        }
+                    }
+                }
                 SetValue();
             }
             else
@@ -135,7 +148,7 @@ namespace smss.control
                     if (ret >= 0)
                     {
                         MessageBox.Show("Success!", "Thông báo");
-                        LoadData();
+                        LoadData("");
                     }
                     else
                     {
