@@ -18,9 +18,9 @@ namespace smss
         control.Class _class; // khi nào dùng sẽ khai báo
         control.Student _student; // khi nào dùng sẽ khai báo
         control.SqlStudent _insertStudent;
-        public static readonly string UrlFolder = @"C:\Users\quang\Documents\GitHub\smss\smss\smss\image";
+        public static readonly string UrlFolder = @"C:\Users\dell\Documents\GitHub\smss\smss\smss\image";
         public static readonly string UrlUser = UrlFolder + "//user.png";
-        public static readonly string StrConnection = @"Data Source=DESKTOP-NGO2712\SQLEXPRESS;Initial Catalog=smss;integrated security=true; Max Pool Size=1024; ";
+        public static readonly string StrConnection = @"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=smss;integrated security=true; Max Pool Size=1024; ";
 
         public Home()
         {
